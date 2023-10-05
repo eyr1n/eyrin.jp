@@ -8,7 +8,7 @@ export function Activities() {
     <Tile title="活動">
       <List spacing="md">
         <ListItem
-          title="とよはし☆ロボコンズ (大学公認団体)"
+          title="とよはし☆ロボコンズ"
           text="2021.04 - 2023.08"
           icon={<IconRobot />}
           color="blue"
