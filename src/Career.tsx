@@ -20,12 +20,12 @@ export function Career() {
             2015.04 - 2018.03
           </Text>
         </Timeline.Item>
-        <Timeline.Item title="市立高校普通科">
+        <Timeline.Item title="市立高校">
           <Text size="sm" mt={4}>
             2018.04 - 2021.03
           </Text>
         </Timeline.Item>
-        <Timeline.Item title="豊橋技術科学大学工学部">
+        <Timeline.Item title="豊橋技術科学大学">
           <Text size="sm" mt={4}>
             2021.04 -
           </Text>
