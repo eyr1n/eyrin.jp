@@ -1,4 +1,4 @@
-import { SimpleGrid, Text } from "@mantine/core";
+import { Anchor, SimpleGrid, Text } from "@mantine/core";
 import {
   IconBrandGithub,
   IconBrandApple,
@@ -53,7 +53,7 @@ export function Works() {
       >
         <Text>
           STM32を用いたIO-Linkマスタ (基板設計:{" "}
-          <a href="https://twitter.com/3dsForest">@3dsForest</a>)
+          <Anchor href="https://twitter.com/3dsForest">@3dsForest</Anchor>)
         </Text>
       </CreationTile>
     </SimpleGrid>
