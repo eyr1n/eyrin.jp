@@ -1,13 +1,18 @@
 import { List, ThemeIcon, Text, DefaultMantineColor } from "@mantine/core";
 
-interface Props {
+interface ListItemWithIconProps {
   title: string;
   text: string;
   icon: React.ReactNode;
   color: DefaultMantineColor;
 }
 
-export function ListItem({ title, text, icon, color }: Props) {
+export function ListItemWithIcon({
+  title,
+  text,
+  icon,
+  color,
+}: ListItemWithIconProps) {
   return (
     <List.Item
       icon={

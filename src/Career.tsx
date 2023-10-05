@@ -1,9 +1,9 @@
 import { Timeline, Text } from "@mantine/core";
-import { Tile } from "./Tile";
+import { TileWithTitle } from "./TileWithTitle";
 
 export function Career() {
   return (
-    <Tile title="経歴">
+    <TileWithTitle title="経歴">
       <Timeline active={4}>
         <Timeline.Item title="横浜市に生まれる">
           <Text size="sm" mt={4}>
@@ -31,6 +31,6 @@ export function Career() {
           </Text>
         </Timeline.Item>
       </Timeline>
-    </Tile>
+    </TileWithTitle>
   );
 }

@@ -1,9 +1,9 @@
 import { Stack, Box, Text } from "@mantine/core";
-import { Tile } from "./Tile";
+import { TileWithTitle } from "./TileWithTitle";
 
 export function Profile() {
   return (
-    <Tile title="プロフィール">
+    <TileWithTitle title="プロフィール">
       <Stack gap="md">
         <Box>
           <Text size="sm" mb={4}>
@@ -30,6 +30,6 @@ export function Profile() {
           <Text fw={500}>ロードバイク, 音楽, 散歩, ...</Text>
         </Box>
       </Stack>
-    </Tile>
+    </TileWithTitle>
   );
 }

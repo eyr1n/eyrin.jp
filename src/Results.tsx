@@ -1,43 +1,43 @@
 import { IconCertificate, IconTrophy } from "@tabler/icons-react";
-import { ListItem } from "./ListItem";
+import { ListItemWithIcon } from "./ListItemWithIcon";
 import { List } from "@mantine/core";
-import { Tile } from "./Tile";
+import { TileWithTitle } from "./TileWithTitle";
 
 export function Results() {
   return (
-    <Tile title="資格・実績">
+    <TileWithTitle title="資格・実績">
       <List spacing="md">
-        <ListItem
+        <ListItemWithIcon
           title="実用英語技能検定 2級"
           text="2018.03"
           icon={<IconCertificate />}
           color="green"
         />
-        <ListItem
+        <ListItemWithIcon
           title="NHK学生ロボコン2022 優勝"
           text="2022.06"
           icon={<IconTrophy />}
           color="yellow"
         />
-        <ListItem
+        <ListItemWithIcon
           title="NHK学生ロボコン2023 優勝"
           text="2023.06"
           icon={<IconTrophy />}
           color="yellow"
         />
-        <ListItem
+        <ListItemWithIcon
           title="ABU Robocon 2023 優勝"
           text="2023.08"
           icon={<IconTrophy />}
           color="yellow"
         />
-        <ListItem
+        <ListItemWithIcon
           title="TOEIC L&R IP 830点"
           text="2023.10"
           icon={<IconCertificate />}
           color="green"
         />
       </List>
-    </Tile>
+    </TileWithTitle>
   );
 }
