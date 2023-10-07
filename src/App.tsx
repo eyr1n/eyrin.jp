@@ -20,7 +20,7 @@ import { Results } from "./Results";
 import { BrandButton } from "./BrandButton";
 import { Works } from "./Works";
 
-import icon from "./assets/icon.jpg";
+import icon from "./assets/icon.png";
 
 const theme = createTheme({});
 
@@ -40,6 +40,7 @@ export function App() {
           <Box w="40%" maw={200}>
             <Image
               src={icon}
+              alt="Icon"
               style={{
                 border: "solid 1px var(--mantine-color-default-border)",
                 borderRadius: "50%",
