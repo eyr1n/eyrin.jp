@@ -20,7 +20,7 @@ import { Results } from "./Results";
 import { BrandButton } from "./BrandButton";
 import { Works } from "./Works";
 
-import icon from "./assets/icon.png";
+import icon from "./assets/icon.webp";
 
 const theme = createTheme({});
 
