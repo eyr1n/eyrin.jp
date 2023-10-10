@@ -18,6 +18,7 @@ import { BrandButton } from "./BrandButton";
 
 import tutility from "./assets/tutility.jpg";
 import iolink from "./assets/iolink.jpg";
+import nhk2023Controller from "./assets/nhk2023_controller.webp";
 
 interface WorkCardProps {
   title: string;
@@ -52,7 +53,7 @@ export function Works() {
   return (
     <SimpleGrid cols={{ base: 1, xs: 2, sm: 3 }}>
       <WorkCard title="TUTility" src={tutility} alt="TUTility">
-        <Text>豊橋技術科学大学の学生向けアプリ</Text>
+        <Text>豊橋技術科学大学の学生向け時間割アプリ</Text>
         <Group gap="xs">
           <BrandButton
             href="https://apps.apple.com/jp/app/tutility/id1624514242"
@@ -87,6 +88,15 @@ export function Works() {
             color="#171515"
           />
         </Group>
+      </WorkCard>
+      <WorkCard
+        title="NHK学生ロボコン2023 コントローラ"
+        src={nhk2023Controller}
+        alt="NHK学生ロボコン2023 コントローラ"
+      >
+        <Text>
+          NHK学生ロボコン2023のロボット操縦に用いたAndroid向けコントローラアプリ
+        </Text>
       </WorkCard>
     </SimpleGrid>
   );
