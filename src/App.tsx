@@ -11,6 +11,7 @@ import {
   Center,
   Text,
   Image,
+  Avatar,
 } from "@mantine/core";
 import { IconBrandTwitter, IconBrandGithub } from "@tabler/icons-react";
 import { Activities } from "./Activities";
@@ -38,14 +39,7 @@ export function App() {
       <Container size="md">
         <Flex my="xl" gap="lg" justify="center" align="center">
           <Box w="40%" maw={200}>
-            <Image
-              src={icon}
-              alt="Icon"
-              style={{
-                border: "solid 1px var(--mantine-color-default-border)",
-                borderRadius: "50%",
-              }}
-            />
+            <Avatar size="100%" src={icon} alt="Icon" />
           </Box>
           <Box>
             <Title mb="xs">りｎ</Title>
