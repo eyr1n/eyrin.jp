@@ -10,7 +10,6 @@ import {
   SimpleGrid,
   Center,
   Text,
-  Image,
   Avatar,
 } from "@mantine/core";
 import { IconBrandTwitter, IconBrandGithub } from "@tabler/icons-react";
