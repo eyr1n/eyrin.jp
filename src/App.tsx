@@ -17,7 +17,7 @@ import { Activities } from "./Activities";
 import { Career } from "./Career";
 import { Profile } from "./Profile";
 import { Results } from "./Results";
-import { BrandButton } from "./BrandButton";
+import { IconButton } from "./IconButton";
 import { Works } from "./Works";
 
 import icon from "./assets/icon.webp";
@@ -43,12 +43,12 @@ export function App() {
           <Box>
             <Title mb="xs">りｎ</Title>
             <Group gap="xs">
-              <BrandButton
+              <IconButton
                 icon={<IconBrandTwitter />}
                 color="#1da1f2"
                 href="https://twitter.com/eyr1n"
               />
-              <BrandButton
+              <IconButton
                 icon={<IconBrandGithub />}
                 color="#171515"
                 href="https://github.com/eyr1n"

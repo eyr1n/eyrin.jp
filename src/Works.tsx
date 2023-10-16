@@ -13,13 +13,15 @@ import {
   IconBrandGithub,
   IconBrandApple,
   IconBrandAndroid,
+  IconWorld,
 } from "@tabler/icons-react";
-import { BrandButton } from "./BrandButton";
+import { IconButton } from "./IconButton";
 
 import tutility from "./assets/tutility.jpg";
 import iolink from "./assets/iolink.jpg";
 import nhk2023Controller from "./assets/nhk2023_controller.webp";
 import keitai2048 from "./assets/keitai2048.webp";
+import artworkSearch from "./assets/artwork_search.png";
 
 interface WorkCardProps {
   title: string;
@@ -70,7 +72,7 @@ export function Works() {
           )
         </Text>
         <Group gap="xs">
-          <BrandButton
+          <IconButton
             href="https://github.com/eyr1n/stm32h7-iolink-master"
             icon={<IconBrandGithub />}
             color="#171515"
@@ -89,17 +91,17 @@ export function Works() {
       <WorkCard title="TUTility" src={tutility} alt="TUTility">
         <Text>豊橋技術科学大学の学生向け時間割アプリ</Text>
         <Group gap="xs">
-          <BrandButton
+          <IconButton
             href="https://apps.apple.com/jp/app/tutility/id1624514242"
             icon={<IconBrandApple />}
             color="#007aff"
           />
-          <BrandButton
+          <IconButton
             href="https://play.google.com/store/apps/details?id=me.rinrin.tutility"
             icon={<IconBrandAndroid />}
             color="#3ddc84"
           />
-          <BrandButton
+          <IconButton
             href="https://github.com/tut-iisg/TUTility"
             icon={<IconBrandGithub />}
             color="#171515"
@@ -109,8 +111,22 @@ export function Works() {
       <WorkCard title="keitai2048" src={keitai2048} alt="keitai2048">
         <Text>ガラケー(Adobe Flash)にパズルゲーム「2048」を移植</Text>
         <Group gap="xs">
-          <BrandButton
+          <IconButton
             href="https://github.com/eyr1n/keitai2048"
+            icon={<IconBrandGithub />}
+            color="#171515"
+          />
+        </Group>
+      </WorkCard>
+      <WorkCard title="ジャケ画探すよ" src={artworkSearch} alt="ジャケ画探すよ">
+        <Text>CDのジャケット画像を探すツール</Text>
+        <Group gap="xs">
+          <IconButton
+            href="https://github.com/eyr1n/artwork-search"
+            icon={<IconWorld />}
+          />
+          <IconButton
+            href="https://github.com/eyr1n/artwork-search"
             icon={<IconBrandGithub />}
             color="#171515"
           />

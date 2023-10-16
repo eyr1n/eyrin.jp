@@ -1,12 +1,12 @@
 import { ActionIcon, DefaultMantineColor } from "@mantine/core";
 
-interface BrandButtonProps {
+interface IconButtonProps {
   href: string;
   icon: React.ReactNode;
-  color: DefaultMantineColor;
+  color?: DefaultMantineColor;
 }
 
-export function BrandButton({ href, icon, color }: BrandButtonProps) {
+export function IconButton({ href, icon, color }: IconButtonProps) {
   return (
     <ActionIcon
       size="xl"
