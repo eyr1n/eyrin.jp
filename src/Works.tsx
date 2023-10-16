@@ -119,7 +119,7 @@ export function Works() {
         </Group>
       </WorkCard>
       <WorkCard title="ジャケ画探すよ" src={artworkSearch} alt="ジャケ画探すよ">
-        <Text>CDのジャケット画像を探すツール</Text>
+        <Text>CDのジャケット画像をiTunes Storeから探すツール</Text>
         <Group gap="xs">
           <IconButton href="https://artwork.rinrin.me" icon={<IconWorld />} />
           <IconButton
