@@ -14,6 +14,8 @@ export function BrandButton({ href, icon, color }: BrandButtonProps) {
       color={color}
       component="a"
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
     >
       {icon}
     </ActionIcon>
