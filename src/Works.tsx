@@ -108,22 +108,22 @@ export function Works() {
           />
         </Group>
       </WorkCard>
-      <WorkCard title="keitai2048" src={keitai2048} alt="keitai2048">
-        <Text>ガラケー(Adobe Flash)にパズルゲーム「2048」を移植</Text>
-        <Group gap="xs">
-          <IconButton
-            href="https://github.com/eyr1n/keitai2048"
-            icon={<IconBrandGithub />}
-            color="#171515"
-          />
-        </Group>
-      </WorkCard>
       <WorkCard title="ジャケ画探すよ" src={artworkSearch} alt="ジャケ画探すよ">
         <Text>CDのジャケット画像をiTunes Storeから探すツール</Text>
         <Group gap="xs">
           <IconButton href="https://artwork.rinrin.me" icon={<IconWorld />} />
           <IconButton
             href="https://github.com/eyr1n/artwork-search"
+            icon={<IconBrandGithub />}
+            color="#171515"
+          />
+        </Group>
+      </WorkCard>
+      <WorkCard title="keitai2048" src={keitai2048} alt="keitai2048">
+        <Text>ガラケー(Adobe Flash)にパズルゲーム「2048」を移植</Text>
+        <Group gap="xs">
+          <IconButton
+            href="https://github.com/eyr1n/keitai2048"
             icon={<IconBrandGithub />}
             color="#171515"
           />
