@@ -102,7 +102,7 @@ export function Works() {
             color="#3ddc84"
           />
           <IconButton
-            href="https://github.com/tut-iisg/TUTility"
+            href="https://github.com/eyr1n/TUTility"
             icon={<IconBrandGithub />}
             color="#171515"
           />
