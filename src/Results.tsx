@@ -37,6 +37,12 @@ export function Results() {
           icon={<IconCertificate />}
           color="green"
         />
+        <ListItemWithIcon
+          title="TOEIC L&R 700点"
+          text="2023.11"
+          icon={<IconCertificate />}
+          color="green"
+        />
       </List>
     </TileWithTitle>
   );
