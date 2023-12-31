@@ -8,6 +8,7 @@ import {
   Text,
   Title,
   Image,
+  Divider,
 } from "@mantine/core";
 import {
   IconBrandGithub,
@@ -41,6 +42,7 @@ function WorkCard({
         <AspectRatio ratio={16 / 9}>
           <Image src={src} alt={alt} />
         </AspectRatio>
+        <Divider />
       </Card.Section>
       <Title order={4} my="sm">
         {title}

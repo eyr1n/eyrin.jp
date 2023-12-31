@@ -38,7 +38,14 @@ export function App() {
       <Container size="md">
         <Flex my="xl" gap="lg" justify="center" align="center">
           <Box w="40%" maw={200}>
-            <Avatar size="100%" src={icon} alt="Icon" />
+            <Avatar
+              style={{
+                border: "1px solid var(--mantine-color-default-border)",
+              }}
+              size="100%"
+              src={icon}
+              alt="Icon"
+            />
           </Box>
           <Box>
             <Title mb="xs">りｎ</Title>
