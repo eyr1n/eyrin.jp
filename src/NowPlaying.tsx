@@ -12,6 +12,8 @@ import {
 import React from "react";
 import { useEffect, useState } from "react";
 
+import classes from "./NowPlaying.module.css";
+
 interface SpotifyNowPlaying {
   album: {
     name?: string;
@@ -63,7 +65,13 @@ export function NowPlaying() {
             />
           </Box>
           <Divider orientation="vertical" />
-          <Stack gap={0} justify="space-between" w={200} h={80} p={8}>
+          <Stack
+            gap={0}
+            justify="space-between"
+            h={80}
+            p={8}
+            className={classes.nowPlayingInfo}
+          >
             <Anchor
               href={nowPlaying?.url}
               target="_blank"
