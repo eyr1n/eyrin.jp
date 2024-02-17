@@ -1,5 +1,6 @@
 import { Stack, Box, Text } from "@mantine/core";
 import { TileWithTitle } from "./TileWithTitle";
+import { NowPlaying } from "./NowPlaying";
 
 export function Profile() {
   return (
@@ -28,6 +29,12 @@ export function Profile() {
             すきなこと・もの
           </Text>
           <Text fw={500}>ロードバイク, 音楽, 散歩, ...</Text>
+        </Box>
+        <Box>
+          <Text size="sm" mb={4}>
+            Now Playing...
+          </Text>
+          <NowPlaying />
         </Box>
       </Stack>
     </TileWithTitle>
