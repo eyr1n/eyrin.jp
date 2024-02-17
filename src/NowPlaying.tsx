@@ -49,7 +49,7 @@ export function NowPlaying() {
     <Center>
       <Card radius="md" withBorder p={0}>
         <Flex align="center" direction="row">
-          <Box w={80} h={80} style={{ flexShrink: 0 }}>
+          <Box w={80} h={80}>
             <Image
               w="100%"
               h="100%"
@@ -68,7 +68,7 @@ export function NowPlaying() {
               href={nowPlaying?.url}
               target="_blank"
               rel="noopener noreferrer"
-              c="dark"
+              c="var(--text-color)"
               size="sm"
               fw={700}
               underline="hover"
@@ -94,7 +94,7 @@ export function NowPlaying() {
                 href={nowPlaying?.album.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                c="dark"
+                c="var(--text-color)"
                 underline="hover"
               >
                 {nowPlaying?.album.name ?? ""}
@@ -116,7 +116,7 @@ export function NowPlaying() {
                     href={artist.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    c="dark"
+                    c="var(--text-color)"
                     underline="hover"
                     key={i}
                   >
