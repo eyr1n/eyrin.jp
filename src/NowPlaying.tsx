@@ -63,7 +63,7 @@ export function NowPlaying() {
             />
           </Box>
           <Divider orientation="vertical" />
-          <Stack gap={0} justify="space-between" w={160} h={80} p={8}>
+          <Stack gap={0} justify="space-between" w={200} h={80} p={8}>
             <Anchor
               href={nowPlaying?.url}
               target="_blank"
