@@ -78,7 +78,7 @@ export function NowPlaying() {
                 overflow: "hidden",
               }}
             >
-              {nowPlaying?.name ?? ""}
+              {nowPlaying?.name ?? "何も聴いてないよ"}
             </Anchor>
 
             <Text
