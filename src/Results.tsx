@@ -39,7 +39,7 @@ export function Results() {
         />
         <ListItemWithIcon
           title="TOEIC L&R 715点 (悲)"
-          text="2024.1"
+          text="2024.01"
           icon={<IconCertificate />}
           color="green"
         />
