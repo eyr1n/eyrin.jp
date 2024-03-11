@@ -1,6 +1,6 @@
+import { List } from "@mantine/core";
 import { IconCertificate, IconTrophy } from "@tabler/icons-react";
 import { ListItemWithIcon } from "./ListItemWithIcon";
-import { List } from "@mantine/core";
 import { TileWithTitle } from "./TileWithTitle";
 
 export function Results() {
@@ -38,7 +38,7 @@ export function Results() {
           color="green"
         />
         <ListItemWithIcon
-          title="TOEIC L&R 715点 (悲)"
+          title="TOEIC L&R 715点"
           text="2024.01"
           icon={<IconCertificate />}
           color="green"

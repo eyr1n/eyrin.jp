@@ -1,6 +1,6 @@
-import { Stack, Box, Text } from "@mantine/core";
-import { TileWithTitle } from "./TileWithTitle";
+import { Box, Stack, Text } from "@mantine/core";
 import { NowPlaying } from "./NowPlaying";
+import { TileWithTitle } from "./TileWithTitle";
 
 export function Profile() {
   return (
@@ -16,7 +16,7 @@ export function Profile() {
           <Text size="sm" mb={4}>
             学年
           </Text>
-          <Text fw={500}>学部3年</Text>
+          <Text fw={500}>学部4年</Text>
         </Box>
         <Box>
           <Text size="sm" mb={4}>
