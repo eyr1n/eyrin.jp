@@ -1,24 +1,26 @@
 import {
-  Avatar,
-  Box,
-  Center,
+  createTheme,
+  MantineProvider,
   Container,
   Divider,
   Flex,
-  Group,
-  MantineProvider,
-  SimpleGrid,
-  Text,
+  Box,
   Title,
-  createTheme,
+  Group,
+  SimpleGrid,
+  Center,
+  Text,
+  Avatar,
 } from "@mantine/core";
-import { IconBrandGithub, IconBrandTwitter } from "@tabler/icons-react";
+import { IconBrandTwitter, IconBrandGithub } from "@tabler/icons-react";
 import { Activities } from "./Activities";
 import { Career } from "./Career";
-import { IconButton } from "./IconButton";
 import { Profile } from "./Profile";
 import { Results } from "./Results";
+import { IconButton } from "./IconButton";
 import { Works } from "./Works";
+
+import icon from "./assets/icon.webp";
 
 const theme = createTheme({});
 
@@ -41,9 +43,7 @@ export function App() {
                 border: "1px solid var(--mantine-color-default-border)",
               }}
               size="100%"
-              src={
-                "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQYV2P4////fwAJ+wP9BUNFygAAAABJRU5ErkJggg=="
-              }
+              src={icon}
               alt="Icon"
             />
           </Box>
