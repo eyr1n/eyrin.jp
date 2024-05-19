@@ -11,10 +11,10 @@ const { class: className, href, disabled, ...props } = Astro.props;
 <a
   href={href}
   class:list={[
-    'rounded-xl border-4 border-dashed',
+    'rounded-xl border-4',
     disabled
       ? 'cursor-not-allowed border-slate-200 text-slate-200'
-      : 'border-primary-300 hover:bg-primary-300 bg-primary-100 transition',
+      : 'border-primary-300 bg-primary-100 transition hover:bg-primary-300',
     className,
   ]}
   {...props}

@@ -44,19 +44,19 @@ const { title, description } = Astro.props;
 
   <body class="mx-auto max-w-screen-md px-4 text-slate-800">
     <header
-      class="bg-primary-100 shadow-primary-200 -mx-4 mb-1 flex items-center justify-between rounded-b-3xl p-6 shadow-[0_4px]"
+      class="-mx-4 mb-1 flex items-center justify-between rounded-b-3xl bg-primary-100 p-6 shadow-[0_4px] shadow-primary-200"
     >
       <h2>
-        <a href="/" class="text-primary-600 font-mono text-3xl font-semibold">
+        <a href="/" class="font-mono text-3xl font-semibold text-primary-600">
           {SITE_TITLE}
         </a>
       </h2>
       <nav class="flex gap-2">
-        <Button class="text-primary-500 p-1.5" href="/about">
+        <Button class="p-1.5 text-primary-500" href="/about">
           <IconUser />
         </Button>
         <Button
-          class="text-twitter p-1.5"
+          class="p-1.5 text-twitter"
           href="https://x.com/eyr1n"
           target={'_blank'}
           rel={'noopener noreferrer'}
@@ -64,7 +64,7 @@ const { title, description } = Astro.props;
           <IconBrandTwitter />
         </Button>
         <Button
-          class="text-github p-1.5"
+          class="p-1.5 text-github"
           href="https://github.com/eyr1n"
           target={'_blank'}
           rel={'noopener noreferrer'}
@@ -79,7 +79,7 @@ const { title, description } = Astro.props;
     </main>
 
     <footer
-      class="border-primary-200 border-t-4 border-dashed py-8 text-slate-400"
+      class="border-t-4 border-dashed border-primary-200 py-8 text-slate-400"
     >
       &copy; <span class="font-mono">2024 eyrin.jp</span>
     </footer>
