@@ -1,0 +1,26 @@
+---
+import { IconCalendarEvent } from '@tabler/icons-react';
+
+interface Props {
+  date: Date;
+}
+
+const { date } = Astro.props;
+---
+
+<div class="flex gap-1 font-mono font-semibold text-slate-400">
+  <IconCalendarEvent />
+  <div>
+    <time datetime={date.toISOString()} class="align-middle">
+      {
+        date
+          .toLocaleDateString('ja', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+          })
+          .replaceAll('/', '-')
+      }
+    </time>
+  </div>
+</div>

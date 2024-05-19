@@ -1,0 +1,33 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import Date from '../../components/Date.astro';
+import Base from '../../layouts/Base.astro';
+import { SITE_TITLE } from '../../consts';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+type Props = CollectionEntry<'posts'>;
+
+const post = Astro.props;
+const { Content } = await post.render();
+const { title, pubDate, description } = post.data;
+---
+
+<Base title={`${title} | ${SITE_TITLE}`} description={description ?? ''}>
+  <article>
+    <header
+      class="flex flex-col items-center gap-4 border-b-4 border-dashed border-primary-200 py-12"
+    >
+      <h1 class="text-center text-3xl font-semibold md:text-4xl">{title}</h1>
+      <Date date={pubDate} />
+    </header>
+    <section class="prose prose-slate max-w-none py-12">
+      <Content />
+    </section>
+  </article>
+</Base>

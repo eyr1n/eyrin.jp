@@ -1,9 +1,0 @@
-.nowPlayingInfo {
-  width: 200px;
-}
-
-@media (width < 349px) {
-  .nowPlayingInfo {
-    width: calc(100vw - 149px);
-  }
-}

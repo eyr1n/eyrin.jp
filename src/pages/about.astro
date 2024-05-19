@@ -1,0 +1,298 @@
+---
+import Card from '../components/Card.astro';
+import WorkCard from '../components/WorkCard.astro';
+import { SITE_TITLE } from '../consts';
+import Base from '../layouts/Base.astro';
+import artworkSearch from '../assets/artwork_search.png';
+import keitai2048 from '../assets/keitai2048.webp';
+import stm32h7IolinkMaster from '../assets/iolink.jpg';
+import tutility from '../assets/tutility.jpg';
+import nhk2023Controller from '../assets/nhk2023_controller.webp';
+import {
+  IconBrandAndroid,
+  IconBrandGithub,
+  IconBrandApple,
+  IconRobot,
+  IconBriefcase,
+  IconCertificate,
+  IconTrophy,
+  IconWorld,
+} from '@tabler/icons-react';
+import Button from '../components/Button.astro';
+import { NowPlaying } from '../components/NowPlaying';
+---
+
+<Base title={`About | ${SITE_TITLE}`} description="About">
+  <div class="grid gap-4 pb-8 pt-12 md:grid-cols-2">
+    <Card title="プロフィール">
+      <div class="flex flex-col gap-4">
+        <div>
+          <div class="mb-1 text-sm">所属</div>
+          <div class="font-medium">豊橋技術科学大学 情報・知能工学課程</div>
+        </div>
+        <div>
+          <div class="mb-1 text-sm">学年</div>
+          <div class="font-medium">学部4年</div>
+        </div>
+        <div>
+          <div class="mb-1 text-sm">すきな技術</div>
+          <div class="font-medium">
+            C++, Rust, Kotlin, React, Vue, ROS 2, ...
+          </div>
+        </div>
+        <div>
+          <div class="mb-1 text-sm">すきなこと・もの</div>
+          <div class="font-medium">ロードバイク, 音楽, 散歩, ...</div>
+        </div>
+        <div>
+          <div class="mb-1 text-sm">Now Playing...</div>
+          <NowPlaying client:load />
+        </div>
+      </div>
+    </Card>
+
+    <Card title="経歴">
+      <div
+        class="border-primary-600 flex flex-col gap-4 border-s-4 pl-[calc(2rem+2px)]"
+      >
+        <div class="relative">
+          <div
+            class="border-primary-600 absolute -left-12 box-content h-4 w-4 rounded-full border-4 bg-white"
+          >
+          </div>
+          <div class="mb-1 font-medium">横浜市に生まれる</div>
+          <div class="text-sm">2002.12</div>
+        </div>
+        <div class="relative">
+          <div
+            class="border-primary-600 absolute -left-12 box-content h-4 w-4 rounded-full border-4 bg-white"
+          >
+          </div>
+          <div class="mb-1 font-medium">市立小学校</div>
+          <div class="text-sm">2009.04 - 2015.03</div>
+        </div>
+        <div class="relative">
+          <div
+            class="border-primary-600 absolute -left-12 box-content h-4 w-4 rounded-full border-4 bg-white"
+          >
+          </div>
+          <div class="mb-1 font-medium">市立中学校</div>
+          <div class="text-sm">2015.04 - 2018.03</div>
+        </div>
+        <div class="relative">
+          <div
+            class="border-primary-600 absolute -left-12 box-content h-4 w-4 rounded-full border-4 bg-white"
+          >
+          </div>
+          <div class="mb-1 font-medium">市立高校</div>
+          <div class="text-sm">2018.04 - 2021.03</div>
+        </div>
+        <div class="relative">
+          <div
+            class="border-primary-600 absolute -left-12 box-content h-4 w-4 rounded-full border-4 bg-white"
+          >
+          </div>
+          <div class="mb-1 font-medium">豊橋技術科学大学</div>
+          <div class="text-sm">2021.04 -</div>
+        </div>
+      </div>
+    </Card>
+
+    <Card title="活動">
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-4">
+          <div class="rounded-full bg-sky-400 p-1.5 text-white">
+            <IconRobot />
+          </div>
+          <div>
+            <div class="mb-1 font-medium">とよはし☆ロボコンズ</div>
+            <div class="text-sm">2021.04 - 2023.08</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="rounded-full bg-amber-800 p-1.5 text-white">
+            <IconBriefcase />
+          </div>
+          <div>
+            <div class="mb-1 font-medium">書店員アルバイト</div>
+            <div class="text-sm">2021.09 - 2022.06</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="rounded-full bg-amber-800 p-1.5 text-white">
+            <IconBriefcase />
+          </div>
+          <div>
+            <div class="mb-1 font-medium">GIS関連 開発アルバイト</div>
+            <div class="text-sm">2022.09 - 2023.05</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="rounded-full bg-amber-800 p-1.5 text-white">
+            <IconBriefcase />
+          </div>
+          <div>
+            <div class="mb-1 font-medium">自動運転関連 開発アルバイト</div>
+            <div class="text-sm">2023.09 -</div>
+          </div>
+        </div>
+      </div>
+    </Card>
+
+    <Card title="資格・実績">
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-4">
+          <div class="rounded-full bg-green-600 p-1.5 text-white">
+            <IconCertificate />
+          </div>
+          <div>
+            <div class="mb-1 font-medium">実用英語技能検定 2級</div>
+            <div class="text-sm">2018.03</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="rounded-full bg-amber-400 p-1.5 text-white">
+            <IconTrophy />
+          </div>
+          <div>
+            <div class="mb-1 font-medium">NHK学生ロボコン2022 優勝</div>
+            <div class="text-sm">2022.06</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="rounded-full bg-amber-400 p-1.5 text-white">
+            <IconTrophy />
+          </div>
+          <div>
+            <div class="mb-1 font-medium">NHK学生ロボコン2023 優勝</div>
+            <div class="text-sm">2023.06</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="rounded-full bg-amber-400 p-1.5 text-white">
+            <IconTrophy />
+          </div>
+          <div>
+            <div class="mb-1 font-medium">ABU Robocon 2023 優勝</div>
+            <div class="text-sm">2023.08</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="rounded-full bg-green-600 p-1.5 text-white">
+            <IconCertificate />
+          </div>
+          <div>
+            <div class="mb-1 font-medium">TOEIC L&R IP 830点</div>
+            <div class="text-sm">2023.10</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="rounded-full bg-green-600 p-1.5 text-white">
+            <IconCertificate />
+          </div>
+          <div>
+            <div class="mb-1 font-medium">TOEIC L&R 715点</div>
+            <div class="text-sm">2024.01</div>
+          </div>
+        </div>
+      </div>
+    </Card>
+  </div>
+
+  <div class="border-primary-200 border-t-4 border-dashed pb-12 pt-8">
+    <h2 class="mb-6 text-center text-2xl font-semibold">制作物</h2>
+    <div class="grid gap-4 md:grid-cols-2">
+      <WorkCard
+        title="stm32h7-iolink-master"
+        img={stm32h7IolinkMaster}
+        alt="stm32h7-iolink-master"
+      >
+        STM32を用いたIO-Linkマスタ (基板設計: <a
+          href="https://x.com/3dsForest"
+          target="_blank"
+          rel="noopener noreferrer">@3dsForest</a
+        >)
+        <div class="mt-4 flex gap-2">
+          <Button
+            class="text-github p-1.5"
+            href="https://github.com/eyr1n/stm32h7-iolink-master"
+            target={'_blank'}
+            rel={'noopener noreferrer'}
+          >
+            <IconBrandGithub />
+          </Button>
+        </div>
+      </WorkCard>
+      <WorkCard
+        title="NHK学生ロボコン2023 コントローラ"
+        img={nhk2023Controller}
+        alt="NHK学生ロボコン2023 コントローラ"
+      >
+        NHK学生ロボコン2023のロボット操縦に用いたAndroid向けコントローラアプリ
+      </WorkCard>
+      <WorkCard title="TUTility" img={tutility} alt="TUTility">
+        豊橋技術科学大学の学生向け時間割アプリ
+        <div class="mt-4 flex gap-2">
+          <Button
+            class="text-apple p-1.5"
+            href="https://apps.apple.com/jp/app/tutility/id1624514242"
+            target={'_blank'}
+            rel={'noopener noreferrer'}
+          >
+            <IconBrandApple />
+          </Button>
+          <Button
+            class="text-android p-1.5"
+            href="https://play.google.com/store/apps/details?id=me.rinrin.tutility"
+            target={'_blank'}
+            rel={'noopener noreferrer'}
+          >
+            <IconBrandAndroid />
+          </Button>
+          <Button
+            class="text-github p-1.5"
+            href="https://github.com/eyr1n/TUTility"
+            target={'_blank'}
+            rel={'noopener noreferrer'}
+          >
+            <IconBrandGithub />
+          </Button>
+        </div>
+      </WorkCard>
+      <WorkCard title="ジャケ画探すよ" img={artworkSearch} alt="ジャケ画探すよ">
+        CDのジャケット画像をiTunes Storeから探すツール
+        <div class="mt-4 flex gap-2">
+          <Button
+            class="text-primary-500 p-1.5"
+            href="https://artwork.rinrin.me"
+            target={'_blank'}
+            rel={'noopener noreferrer'}
+          >
+            <IconWorld />
+          </Button>
+          <Button
+            class="text-github p-1.5"
+            href="https://github.com/eyr1n/artwork-search"
+            target={'_blank'}
+            rel={'noopener noreferrer'}
+          >
+            <IconBrandGithub />
+          </Button>
+        </div>
+      </WorkCard>
+      <WorkCard title="keitai2048" img={keitai2048} alt="keitai2048">
+        ガラケー(Adobe Flash)にパズルゲーム「2048」を移植
+        <div class="mt-4 flex gap-2">
+          <Button
+            class="text-github p-1.5"
+            href="https://github.com/eyr1n/keitai2048"
+            target={'_blank'}
+            rel={'noopener noreferrer'}
+          >
+            <IconBrandGithub />
+          </Button>
+        </div>
+      </WorkCard>
+    </div>
+  </div>
+</Base>

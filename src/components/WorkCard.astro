@@ -1,0 +1,26 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+  title: string;
+  img: ImageMetadata;
+  alt: string;
+}
+
+const { title, img, alt } = Astro.props;
+---
+
+<section class="overflow-hidden rounded-xl border-4 border-slate-200">
+  <div>
+    <Image class="aspect-video object-cover" src={img} alt={alt} />
+  </div>
+  <div class="p-4">
+    <h3 class="mb-4 text-xl font-semibold">
+      {title}
+    </h3>
+    <div>
+      <slot />
+    </div>
+  </div>
+</section>
