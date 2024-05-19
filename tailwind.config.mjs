@@ -18,6 +18,15 @@ export default {
       fontFamily: {
         mono: ['"Ubuntu Sans Mono Variable"', ...defaultTheme.fontFamily.mono],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            blockquote: {
+              quotes: 'none',
+            },
+          },
+        },
+      },
     },
   },
   plugins: [typography],
