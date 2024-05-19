@@ -21,9 +21,8 @@ export default {
       typography: {
         DEFAULT: {
           css: {
-            blockquote: {
-              quotes: 'none',
-            },
+            'blockquote p:first-of-type::before': false,
+            'blockquote p:first-of-type::after': false,
           },
         },
       },
