@@ -1,9 +1,9 @@
 ---
-title: "AbortControllerで任意のPromiseをrejectしてみる"
-pubDate:  "2024-05-15 08:01"
+title: 'AbortControllerで任意のPromiseをrejectしてみる'
+pubDate: '2024-05-15 08:01'
 ---
 
-## AbortControllerとは
+# AbortControllerとは
 
 AbortControllerというものがある．
 
@@ -14,16 +14,16 @@ https://developer.mozilla.org/ja/docs/Web/API/AbortController
 ```js
 const controller = new AbortController();
 controller.signal.addEventListener(
-  "abort",
+  'abort',
   () => {
-    console.log("aborted");
+    console.log('aborted');
   },
-  { once: true }
+  { once: true },
 );
 controller.abort();
 ```
 
-### result
+## result
 
 ```
 aborted
@@ -31,20 +31,20 @@ aborted
 
 これを使って，任意のPromiseをthenやawaitで待機している状態から離脱できるようなものを作ってみる
 
-## 実装
+# 実装
 
-### abort可能なPromiseを生成する関数
+## abort可能なPromiseを生成する関数
 
 ```ts
 function abortable<T>(promise: Promise<T>, signal: AbortSignal) {
   return new Promise<T>((resolve, reject) => {
-    signal.addEventListener("abort", reject, { once: true });
+    signal.addEventListener('abort', reject, { once: true });
     promise.then(resolve, reject);
   });
 }
 ```
 
-### 使い方
+## 使い方
 
 ```ts
 function sleep(ms: number) {
