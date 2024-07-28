@@ -1,6 +1,6 @@
 ---
-title: "【2021年最新版】Dockerでつくる! Nintendo DS開発環境"
-pubDate:  2021-12-08T06:11:59+09:00
+title: '【2021年最新版】Dockerでつくる! Nintendo DS開発環境'
+pubDate: 2021-12-08T06:11:59+09:00
 ---
 
 これは、[TUT Advent Calendar 2021](https://adventar.org/calendars/6364) 8日目の記事です。
@@ -36,7 +36,7 @@ pubDate:  2021-12-08T06:11:59+09:00
 
 ### DSiの脆弱性について
 
-2018年ごろ、No$gba(GBA・NDSエミュレータ)開発者のno$cash氏によって「Unlaunch」というDSi用のbootcode exploitが公開されました。この脆弱性はDSiに用意されている公式のランチャー(いわゆるホーム画面)が起動する前に、`SCFG_EXT`というレジスタへのアクセス権を取得することで任意のコードが実行できる様になるというものです(この辺りの仕組みあまりよくわかっていません)。
+2018年ごろ、No\$gba(GBA・NDSエミュレータ)開発者のno\$cash氏によって「Unlaunch」というDSi用のbootcode exploitが公開されました。この脆弱性はDSiに用意されている公式のランチャー(いわゆるホーム画面)が起動する前に、`SCFG_EXT`というレジスタへのアクセス権を取得することで任意のコードが実行できる様になるというものです(この辺りの仕組みあまりよくわかっていません)。
 
 詳しい内容と導入方法は以下のサイトに丁寧にまとめられています。
 
@@ -88,7 +88,7 @@ volatile int frame = 0;
 void Vblank() {
 	frame++;
 }
-	
+
 int main(void) {
 	touchPosition touchXY;
 
@@ -99,7 +99,7 @@ int main(void) {
 	iprintf("      Hello DS dev'rs\n");
 	iprintf("     \x1b[32mwww.devkitpro.org\n");
 	iprintf("   \x1b[32;1mwww.drunkencoders.com\x1b[39m");
- 
+
 	while(1) {
 		swiWaitForVBlank();
 		scanKeys();
@@ -118,18 +118,23 @@ int main(void) {
 ```
 
 #### irqSet関数
+
 画面切り替え時(VBlank)の割込ハンドラを登録しています(ちなみにVBlankという名称はブラウン管時代の名残だったりします)。
 
 #### consoleDemoInit関数
+
 画面の初期化やフォントの読み込みなど諸々をまとめてやってくれる、デモプログラムを作成するときにめちゃくちゃ便利な関数です。
 
 #### iprintf関数
+
 printfと同じような感覚で画面に文字を出力することができる関数です。一部のエスケープシーケンスも使えるため、ちょっとカラフルにしたりも出来ます。この関数だけなぜかヘッダ内にプロトタイプ宣言がなく、libnds公式ドキュメントにも記載が見当たりませんでした。
 
 #### swiWaitForVBlank関数
+
 VBlank割込を待つ関数であり、while文の中身は画面切り替え周期にあわせて実行されます。
 
 #### scanKeys、keysDown関数
+
 キー入力を受け取る為の関数です。
 
 これらの関数があればちょっとしたゲームを作ることができそうです。
@@ -137,6 +142,7 @@ VBlank割込を待つ関数であり、while文の中身は画面切り替え周
 ### 簡単なゲームを作ってみる
 
 #### ゲームのネタ・作業用ディレクトリの準備
+
 3年前に、[2048](https://play2048.co/)というゲームをAdobe Flashに(なんとな〜く)移植したのですが、そのときのコードをたまたま発掘したので今回はそれをNDS向けに実装してみました。まずは`hello_world`ディレクトリを`workdir`の下に複製します。
 
 ```sh
@@ -158,16 +164,9 @@ $ cp -r ../hello_world ../../cpp2048-nds
   "configurations": [
     {
       "name": "devkitARM",
-      "includePath": [
-        "${workspaceFolder}/**",
-        "/opt/devkitpro/libnds/include"
-      ],
-      "forcedInclude": [
-        "${workspaceFolder}/.vscode/iprintf.h"
-      ],
-      "defines": [
-        "ARM9"
-      ],
+      "includePath": ["${workspaceFolder}/**", "/opt/devkitpro/libnds/include"],
+      "forcedInclude": ["${workspaceFolder}/.vscode/iprintf.h"],
+      "defines": ["ARM9"],
       "cStandard": "c17",
       "cppStandard": "c++20",
       "compilerPath": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc"
