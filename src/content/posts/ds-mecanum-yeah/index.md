@@ -1,6 +1,6 @@
 ---
-title: "Nintendo DSでメカナムを飼う"
-pubDate:  2022-12-19T06:04:10+09:00
+title: 'Nintendo DSでメカナムを飼う'
+pubDate: 2022-12-19T06:04:10+09:00
 ---
 
 これは、
@@ -26,7 +26,7 @@ pubDate:  2022-12-19T06:04:10+09:00
 そのためロボコン自体の経験もまだ2年と浅く、「大した内容は書けないなぁ、でもちょっと爪痕残しておきたいなぁ」みたいなことを考えていたのですが、その際にふと思いついたネタを実践してみました。
 
 > 弊学の学生へ
-> 
+>
 > このアドカレ記事はそれなりにロボコン要素がありますが、見た目のインパクトは大きいと思っているので、ロボコンに興味ない方にももしかしたら楽しんでもらえると思います。ぜひ最後まで読んでいただければ。
 
 ## ロボコンのコントローラーについて
@@ -86,7 +86,7 @@ ESP32の方は送られたUDPのパケットを読んで、ありきたりなコ
 
 ちょうどメカナム台車をお家で飼いたいなぁと思っていたので、適当なものをアマゾンでポチってみました。
 
-{{< youtube t7p4Sjx59Qk >}}
+<div class="aspect-video"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/t7p4Sjx59Qk?si=LXjiOx5o5dM9vtGr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 ## 写真とか
 
