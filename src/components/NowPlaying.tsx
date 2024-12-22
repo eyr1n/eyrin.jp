@@ -45,30 +45,37 @@ export function NowPlaying() {
         ) : null}
       </div>
       <div className="grid grid-rows-3 items-center justify-between border-l-2 border-slate-200 p-1.5">
-        <div className="overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold hover:underline">
-          <a href={nowPlaying?.url} target="_blank" rel="noopener noreferrer">
+        <div className="overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold">
+          <a
+            href={nowPlaying?.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline"
+          >
             {nowPlaying?.name ?? '何も聴いてないよ'}
           </a>
         </div>
-        <div className="overflow-hidden text-ellipsis whitespace-nowrap text-xs hover:underline">
+        <div className="overflow-hidden text-ellipsis whitespace-nowrap text-xs">
           💿{' '}
           <a
             href={nowPlaying?.album.url}
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:underline"
           >
             {nowPlaying?.album.name ?? ''}
           </a>
         </div>
-        <div className="overflow-hidden text-ellipsis whitespace-nowrap text-xs hover:underline">
+        <div className="overflow-hidden text-ellipsis whitespace-nowrap text-xs">
           👤{' '}
           {nowPlaying?.artists
             .map((artist, i) => (
               <a
+                key={i}
                 href={artist.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                key={i}
+                className="hover:underline"
               >
                 {artist.name}
               </a>
