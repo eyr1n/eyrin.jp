@@ -1,6 +1,6 @@
 ---
-title: "HTML5の新しい属性「contentEditable」"
-pubDate:  2017-01-06T00:00:00+09:00
+title: 'HTML5の新しい属性「contentEditable」'
+pubDate: 2017-01-06T00:00:00+09:00
 ---
 
 このページ、なんか変だと思いませんか？

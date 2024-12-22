@@ -59,7 +59,7 @@ pubDate: '2024-12-06 06:05'
 
 ### 1年生のツイート
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">楽しすぎる<br>制御上手くいくとまじ嬉しい <a href="https://t.co/Oj2Oz9sdtm">pic.twitter.com/Oj2Oz9sdtm</a></p>&mdash; さとう (@tomomega33) <a href="https://twitter.com/tomomega33/status/1846589302131786022?ref_src=twsrc%5Etfw">October 16, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">楽しすぎる<br>制御上手くいくとまじ嬉しい <a href="https://t.co/Oj2Oz9sdtm">pic.twitter.com/Oj2Oz9sdtm</a></p>&mdash; さとう (@tomomega33) <a href="https://twitter.com/tomomega33/status/1846589302131786022?ref_src=twsrc%5Etfw">October 16, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## 11月 - 役割・やりたいことの細分化
 

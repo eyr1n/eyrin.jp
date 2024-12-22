@@ -34,69 +34,59 @@ export function NowPlaying() {
       .then(setNowPlaying);
   }, []);
 
+  const artwork = nowPlaying?.images.sort(
+    (a, b) =>
+      Math.max(b.width ?? 0, b.height ?? 0) -
+      Math.max(a.width ?? 0, a.height ?? 0),
+  )[0]?.url;
+
   return (
-    <div className="overflow-hidden rounded-md border-2 border-slate-200">
-      <div className="flex items-center">
-        <div className="h-[80px] w-[80px] border-r-2 border-slate-200">
-          <img
-            className="h-full w-full object-cover"
-            src={
-              nowPlaying?.images.sort(
-                (a, b) =>
-                  Math.max(b.width ?? 0, b.height ?? 0) -
-                  Math.max(a.width ?? 0, a.height ?? 0),
-              )[0]?.url ?? blank1px
-            }
-          />
-        </div>
-        <div className="flex h-[80px] flex-col justify-between p-[8px]">
-          <a
-            href={nowPlaying?.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold hover:underline"
-          >
+    <div className="grid grid-cols-[84px_1fr] grid-rows-[84px] overflow-hidden rounded-md border-2 border-slate-200">
+      <div>
+        {artwork ? (
+          <img className="h-full w-full object-cover" src={artwork} />
+        ) : null}
+      </div>
+      <div className="grid grid-rows-3 items-center justify-between border-l-2 border-slate-200 p-1.5">
+        <div className="overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold hover:underline">
+          <a href={nowPlaying?.url} target="_blank" rel="noopener noreferrer">
             {nowPlaying?.name ?? '何も聴いてないよ'}
           </a>
-
-          <div className="overflow-hidden text-ellipsis whitespace-nowrap text-xs">
-            💿{' '}
-            <a
-              href={nowPlaying?.album.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline"
-            >
-              {nowPlaying?.album.name ?? ''}
-            </a>
-          </div>
-
-          <div className="overflow-hidden text-ellipsis whitespace-nowrap text-xs">
-            👤{' '}
-            {nowPlaying?.artists
-              .map((artist, i) => (
-                <a
-                  href={artist.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline"
-                  key={i}
-                >
-                  {artist.name}
-                </a>
-              ))
-              .reduce(
-                (acc: JSX.Element[], cur, i) =>
-                  acc.length === 0
-                    ? [cur]
-                    : [
-                        ...acc,
-                        <React.Fragment key={i + ','}>{', '}</React.Fragment>,
-                        cur,
-                      ],
-                [],
-              )}
-          </div>
+        </div>
+        <div className="overflow-hidden text-ellipsis whitespace-nowrap text-xs hover:underline">
+          💿{' '}
+          <a
+            href={nowPlaying?.album.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {nowPlaying?.album.name ?? ''}
+          </a>
+        </div>
+        <div className="overflow-hidden text-ellipsis whitespace-nowrap text-xs hover:underline">
+          👤{' '}
+          {nowPlaying?.artists
+            .map((artist, i) => (
+              <a
+                href={artist.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={i}
+              >
+                {artist.name}
+              </a>
+            ))
+            .reduce(
+              (acc: JSX.Element[], cur, i) =>
+                acc.length === 0
+                  ? [cur]
+                  : [
+                      ...acc,
+                      <React.Fragment key={i + ','}>{', '}</React.Fragment>,
+                      cur,
+                    ],
+              [],
+            )}
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 ---
-title: "とにかく何も考えずにmacOSでLaTeX"
-pubDate:  "2024-02-05 10:29"
+title: 'とにかく何も考えずにmacOSでLaTeX'
+pubDate: '2024-02-05 10:29'
 ---
 
 これ以上面倒なことは(今のところは)しないようにしている
@@ -21,26 +21,20 @@ VSCodeに拡張機能インストール
 {
   "[latex]": {
     "editor.wordWrap": "on",
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": false
   },
   "latex-workshop.latex.outDir": "%DIR%/out",
   "latex-workshop.latex.recipes": [
     {
       "name": "latexmk",
-      "tools": [
-        "latexmk"
-      ]
+      "tools": ["latexmk"]
     }
   ],
   "latex-workshop.latex.tools": [
     {
       "name": "latexmk",
       "command": "latexmk",
-      "args": [
-        "-synctex=1",
-        "-outdir=%OUTDIR%",
-        "%DOC%"
-      ]
+      "args": ["-synctex=1", "-outdir=%OUTDIR%", "%DOC%"]
     }
   ]
 }

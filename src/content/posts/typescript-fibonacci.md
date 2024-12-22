@@ -1,6 +1,6 @@
 ---
-title: "TypeScript(の型)でフィボナッチ数列をやる"
-pubDate:  2022-02-25T03:01:24+09:00
+title: 'TypeScript(の型)でフィボナッチ数列をやる'
+pubDate: 2022-02-25T03:01:24+09:00
 ---
 
 暇つぶしに[こんな記事](https://zenn.dev/kerukukku1/articles/b66844ba02bc8c)を読んでいたら、
@@ -12,8 +12,10 @@ TypeScriptの型システムを駆使すれば、フィボナッチ数列くら�
 まずは元記事を参考にして、再帰を用いて任意の長さの配列を生成してみる。
 
 ```typescript
-type GenArr<A extends number, Result extends number[] = []> =
-  Result["length"] extends A ? Result : GenArr<A, [...Result, 0]>;
+type GenArr<
+  A extends number,
+  Result extends number[] = [],
+> = Result['length'] extends A ? Result : GenArr<A, [...Result, 0]>;
 
 GenArr<3>; // [0, 0, 0]
 ```
@@ -25,10 +27,12 @@ Resultの"length"プロパティがAと一致するまでResultの末尾に0を�
 ただ、これだけだとTypeScriptのコンパイラに「戻り値がnumber型の制約を満たさない」と怒られてしまう。なので戻り値がnumber型の制約を満たしていたら戻り値をそのまま返し、それ以外は0を返す、といったConditional Typesを書いておくとコンパイラに怒られなくて済む。
 
 ```typescript
-type Sum<A extends number, B extends number> =
-  [...GenArr<A>, ...GenArr<B>]["length"] extends number
-    ? [...GenArr<A>, ...GenArr<B>]["length"]
-    : 0;
+type Sum<A extends number, B extends number> = [
+  ...GenArr<A>,
+  ...GenArr<B>,
+]['length'] extends number
+  ? [...GenArr<A>, ...GenArr<B>]['length']
+  : 0;
 
 Sum<1, 2>; // 3
 ```
@@ -43,7 +47,8 @@ type Fibonacci<
   B extends number = 0,
   C extends number = 1,
   Result extends number[] = [],
-> = Result["length"] extends A ? Result
+> = Result['length'] extends A
+  ? Result
   : Fibonacci<A, C, Sum<B, C>, [...Result, B]>;
 ```
 

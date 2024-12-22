@@ -1,6 +1,6 @@
 ---
-title: "UbuntuになれなかったXubuntu"
-pubDate:  2017-01-09T00:00:00+09:00
+title: 'UbuntuになれなかったXubuntu'
+pubDate: 2017-01-09T00:00:00+09:00
 ---
 
 ThinkPad X32のOSをLubuntu 16.04 LTSからXubuntu 16.04 LTSに変えたついでに、XubuntuをUbuntuっぽくしてみました(前回もそんな感じだった気が)。

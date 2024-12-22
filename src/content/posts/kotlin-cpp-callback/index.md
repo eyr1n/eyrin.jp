@@ -1,6 +1,6 @@
 ---
-title: "Kotlinのラムダ式をC++から気軽にコールバックする"
-pubDate:  2022-12-16T04:17:21+09:00
+title: 'Kotlinのラムダ式をC++から気軽にコールバックする'
+pubDate: 2022-12-16T04:17:21+09:00
 ---
 
 これは [C++ Advent Calendar 2022](https://qiita.com/advent-calendar/2022/cxx) 16日目 の記事です。

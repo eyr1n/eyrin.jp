@@ -1,6 +1,6 @@
 ---
-title: "Linux周りの部内インフラについて"
-pubDate:  2023-12-11T11:37:00+09:00
+title: 'Linux周りの部内インフラについて'
+pubDate: 2023-12-11T11:37:00+09:00
 ---
 
 この記事は、[学ロボ Advent Calendar 2023](https://adventar.org/calendars/8926) 12 日目の記事です。

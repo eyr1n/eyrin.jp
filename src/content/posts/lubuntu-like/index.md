@@ -1,6 +1,6 @@
 ---
-title: "UbuntuになれなかったLubuntu"
-pubDate:  2017-01-08T00:00:00+09:00
+title: 'UbuntuになれなかったLubuntu'
+pubDate: 2017-01-08T00:00:00+09:00
 ---
 
 自分のIBM ThinkPad X32のOSをVine Linux 6.3から、Lubuntu 16.04 LTSに変えたついでに、LubuntuをUbuntuっぽくしてみました。

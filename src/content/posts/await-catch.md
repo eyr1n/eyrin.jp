@@ -1,6 +1,6 @@
 ---
-title: "try/catchではなくawait/catchを使おう"
-pubDate:  2021-11-16T06:47:33+09:00
+title: 'try/catchではなくawait/catchを使おう'
+pubDate: 2021-11-16T06:47:33+09:00
 ---
 
 async関数はファイルの読み込みや書き込みといった、エラーの可能性を伴うような関数に使われることが多い。この際のエラーハンドリングは通常try/catchパターンで行われる(私もそうしてきた)。
@@ -21,16 +21,17 @@ async関数はファイルの読み込みや書き込みといった、エラー
 - 関数の結果をconstで保持できる
 - エラーが発生したら適切に処理した後、早期リターンで安全に終了できる
 - <s>Goのエラーハンドリングみたいで個人的に好き
-</s>
+  </s>
+
 ### コード例
 
 ```javascript
 // 1/2の確率でエラーを返す関数
 const func = async () => {
   if (Math.random() > 0.5) {
-    throw new Error("error");
+    throw new Error('error');
   }
-  return "success";
+  return 'success';
 };
 
 // await/catchパターン
