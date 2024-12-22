@@ -25,20 +25,17 @@ interface SpotifyNowPlaying {
 export function NowPlaying() {
   const [nowPlaying, setNowPlaying] = useState<SpotifyNowPlaying>();
 
-  const blank1px =
-    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQYV2P4////fwAJ+wP9BUNFygAAAABJRU5ErkJggg==';
+  const artwork = nowPlaying?.images.sort(
+    (a, b) =>
+      Math.max(b.width ?? 0, b.height ?? 0) -
+      Math.max(a.width ?? 0, a.height ?? 0),
+  )[0]?.url;
 
   useEffect(() => {
     fetch('https://nowplaying.eyrin.jp')
       .then((res) => res.json())
       .then(setNowPlaying);
   }, []);
-
-  const artwork = nowPlaying?.images.sort(
-    (a, b) =>
-      Math.max(b.width ?? 0, b.height ?? 0) -
-      Math.max(a.width ?? 0, a.height ?? 0),
-  )[0]?.url;
 
   return (
     <div className="grid grid-cols-[84px_1fr] grid-rows-[84px] overflow-hidden rounded-md border-2 border-slate-200">
