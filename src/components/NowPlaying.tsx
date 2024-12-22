@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment, type JSX } from 'react';
 import { useEffect, useState } from 'react';
 
 interface SpotifyNowPlaying {
@@ -80,11 +80,7 @@ export function NowPlaying() {
               (acc: JSX.Element[], cur, i) =>
                 acc.length === 0
                   ? [cur]
-                  : [
-                      ...acc,
-                      <React.Fragment key={i + ','}>{', '}</React.Fragment>,
-                      cur,
-                    ],
+                  : [...acc, <Fragment key={i + ','}>{', '}</Fragment>, cur],
               [],
             )}
         </div>
