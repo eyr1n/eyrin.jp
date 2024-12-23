@@ -78,12 +78,12 @@ import { IconDisc, IconUser } from '@tabler/icons-react';
                   Math.max(a.width ?? 0, a.height ?? 0),
               )[0]?.url;
               artwork.innerHTML = `<img class="h-full w-full object-cover" src=${artworkSrc} alt="artwork" />`;
-              name.innerHTML = `<a href=${nowPlaying.url} target="_blank" rel="noopener noreferrer" class="hover:underline">${nowPlaying.name}</a>`;
-              album.innerHTML = `<a href=${nowPlaying.album.url} target="_blank" rel="noopener noreferrer" class="hover:underline">${nowPlaying.album.name}</a>`;
+              name.innerHTML = `<a href=${nowPlaying.url} target="_blank" class="hover:underline">${nowPlaying.name}</a>`;
+              album.innerHTML = `<a href=${nowPlaying.album.url} target="_blank" class="hover:underline">${nowPlaying.album.name}</a>`;
               artists.innerHTML = nowPlaying.artists
                 .map(
                   (artist) =>
-                    `<a href=${artist.url} target="_blank" rel="noopener noreferrer" class="hover:underline">${artist.name}</a>`,
+                    `<a href=${artist.url} target="_blank" class="hover:underline">${artist.name}</a>`,
                 )
                 .join(', ');
             } else {
