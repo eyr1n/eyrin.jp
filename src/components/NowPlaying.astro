@@ -77,7 +77,7 @@ import { IconDisc, IconUser } from '@tabler/icons-react';
                   Math.max(b.width ?? 0, b.height ?? 0) -
                   Math.max(a.width ?? 0, a.height ?? 0),
               )[0]?.url;
-              artwork.innerHTML = `<img class="h-full w-full object-cover" src=${artworkSrc} />`;
+              artwork.innerHTML = `<img class="h-full w-full object-cover" src=${artworkSrc} alt="artwork" />`;
               name.innerHTML = `<a href=${nowPlaying.url} target="_blank" rel="noopener noreferrer" class="hover:underline">${nowPlaying.name}</a>`;
               album.innerHTML = `<a href=${nowPlaying.album.url} target="_blank" rel="noopener noreferrer" class="hover:underline">${nowPlaying.album.name}</a>`;
               artists.innerHTML = nowPlaying.artists
