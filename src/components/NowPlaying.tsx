@@ -55,51 +55,61 @@ export function NowPlaying() {
       </div>
 
       <div className="grid h-[84px] grid-cols-[auto_auto] grid-rows-3 items-center justify-start gap-x-1 border-l-2 border-slate-200 p-1.5">
-        <div className="col-span-2 overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold">
-          <a
-            href={nowPlaying?.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-          >
-            {nowPlaying?.name ?? '何も聴いてないよ'}
-          </a>
-        </div>
-
-        <IconDisc size={16} />
-        <div className="overflow-hidden text-ellipsis whitespace-nowrap text-xs">
-          <a
-            href={nowPlaying?.album.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-          >
-            {nowPlaying?.album.name ?? ''}
-          </a>
-        </div>
-
-        <IconUser size={16} />
-        <div className="overflow-hidden text-ellipsis whitespace-nowrap text-xs">
-          {nowPlaying?.artists
-            .map((artist, i) => (
+        {nowPlaying?.is_playing ? (
+          <>
+            <div className="col-span-2 overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold">
               <a
-                key={i}
-                href={artist.url}
+                href={nowPlaying.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"
               >
-                {artist.name}
+                {nowPlaying.name}
               </a>
-            ))
-            .reduce(
-              (acc: JSX.Element[], cur, i) =>
-                acc.length === 0
-                  ? [cur]
-                  : [...acc, <Fragment key={i + ','}>{', '}</Fragment>, cur],
-              [],
-            )}
-        </div>
+            </div>
+
+            <IconDisc size={16} />
+            <div className="overflow-hidden text-ellipsis whitespace-nowrap text-xs">
+              <a
+                href={nowPlaying.album.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                {nowPlaying.album.name}
+              </a>
+            </div>
+
+            <IconUser size={16} />
+            <div className="overflow-hidden text-ellipsis whitespace-nowrap text-xs">
+              {nowPlaying.artists
+                .map((artist, i) => (
+                  <a
+                    key={i}
+                    href={artist.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    {artist.name}
+                  </a>
+                ))
+                .reduce(
+                  (acc: JSX.Element[], cur, i) =>
+                    acc.length === 0
+                      ? [cur]
+                      : [
+                          ...acc,
+                          <Fragment key={i + ','}>{', '}</Fragment>,
+                          cur,
+                        ],
+                  [],
+                )}
+            </div>
+          </>
+        ) : (
+          <div className="text-sm font-semibold">何も聴いてないよ</div>
+        )}
       </div>
     </div>
   );
