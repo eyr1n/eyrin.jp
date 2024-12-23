@@ -25,7 +25,11 @@ import Body from '../components/Body.astro';
 
 <!doctype html>
 <html lang="ja">
-  <head><Head title={`About | ${SITE_TITLE}`} description="About" /></head>
+  <head>
+    <Head title={`About | ${SITE_TITLE}`} description="About" />
+    <link rel="preconnect" href="https://nowplaying.eyrin.jp" />
+    <link rel="preconnect" href="https://i.scdn.co" />
+  </head>
   <Body>
     <div class="grid gap-4 pb-8 pt-12 md:grid-cols-2">
       <Card title="プロフィール">
