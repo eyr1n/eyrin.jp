@@ -57,12 +57,15 @@ import { IconDisc, IconUser } from '@tabler/icons-react';
   }
 
   class NowPlaying extends HTMLElement {
-    constructor() {
-      super();
+    #clearTimeoutHandler = Promise.resolve(() => {});
+
+    async connectedCallback() {
       const artwork = this.querySelector('[data-nowplaying-artwork]')!;
       const name = this.querySelector('[data-nowplaying-name]')!;
       const album = this.querySelector('[data-nowplaying-album]')!;
       const artists = this.querySelector('[data-nowplaying-artists]')!;
+
+      (await this.#clearTimeoutHandler)();
 
       const fetchNowPlaying = () =>
         fetch('https://nowplaying.eyrin.jp')
@@ -90,8 +93,12 @@ import { IconDisc, IconUser } from '@tabler/icons-react';
               artists.innerHTML = '';
             }
           })
-          .then(() => setTimeout(fetchNowPlaying, 30000));
-      fetchNowPlaying();
+          .then(() => {
+            const id = setTimeout(fetchNowPlaying, 30000);
+            return () => clearTimeout(id);
+          });
+
+      this.#clearTimeoutHandler = fetchNowPlaying();
     }
   }
 
