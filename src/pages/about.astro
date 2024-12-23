@@ -19,7 +19,7 @@ import {
   IconWorld,
 } from '@tabler/icons-react';
 import Button from '../components/Button.astro';
-import { NowPlaying } from '../components/NowPlaying';
+import NowPlaying from '../components/NowPlaying.astro';
 ---
 
 <Base title={`About | ${SITE_TITLE}`} description="About">
@@ -46,7 +46,7 @@ import { NowPlaying } from '../components/NowPlaying';
         </div>
         <div>
           <div class="mb-1 text-sm">Now Playing...</div>
-          <NowPlaying client:only="react" />
+          <NowPlaying />
         </div>
       </div>
     </Card>

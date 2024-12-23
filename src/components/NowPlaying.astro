@@ -1,0 +1,99 @@
+---
+import { IconDisc, IconUser } from '@tabler/icons-react';
+---
+
+<now-playing>
+  <div
+    class="grid grid-cols-[auto_1fr] overflow-hidden rounded-md border-2 border-slate-200"
+  >
+    <div class="h-[84px] w-[84px]" data-nowplaying-artwork></div>
+
+    <div
+      class="grid h-[84px] grid-cols-[auto_auto] grid-rows-3 items-center justify-start gap-x-1 border-l-2 border-slate-200 p-1.5"
+    >
+      <div
+        class="col-span-2 overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold"
+        data-nowplaying-name
+      >
+      </div>
+
+      <IconDisc size={16} />
+      <div
+        class="overflow-hidden text-ellipsis whitespace-nowrap text-xs"
+        data-nowplaying-album
+      >
+      </div>
+
+      <IconUser size={16} />
+      <div
+        class="overflow-hidden text-ellipsis whitespace-nowrap text-xs"
+        data-nowplaying-artists
+      >
+      </div>
+    </div>
+  </div>
+</now-playing>
+
+<script>
+  interface SpotifyNowPlaying {
+    album: {
+      name?: string;
+      url?: string;
+    };
+    artists: {
+      name?: string;
+      url?: string;
+    }[];
+    duration_ms?: number;
+    images: {
+      url: string;
+      height: number | null;
+      width: number | null;
+    }[];
+    is_playing?: boolean;
+    name?: string;
+    progress_ms?: number | null;
+    url?: string;
+  }
+
+  class NowPlaying extends HTMLElement {
+    constructor() {
+      super();
+      const artwork = this.querySelector('[data-nowplaying-artwork]')!;
+      const name = this.querySelector('[data-nowplaying-name]')!;
+      const album = this.querySelector('[data-nowplaying-album]')!;
+      const artists = this.querySelector('[data-nowplaying-artists]')!;
+
+      const fetchNowPlaying = () =>
+        fetch('https://nowplaying.eyrin.jp')
+          .then((res) => res.json())
+          .then((nowPlaying: SpotifyNowPlaying) => {
+            if (nowPlaying.is_playing) {
+              const artworkSrc = nowPlaying?.images.sort(
+                (a, b) =>
+                  Math.max(b.width ?? 0, b.height ?? 0) -
+                  Math.max(a.width ?? 0, a.height ?? 0),
+              )[0]?.url;
+              artwork.innerHTML = `<img class="h-full w-full object-cover" src=${artworkSrc} />`;
+              name.innerHTML = `<a href=${nowPlaying.url} target="_blank" rel="noopener noreferrer" class="hover:underline">${nowPlaying.name}</a>`;
+              album.innerHTML = `<a href=${nowPlaying.album.url} target="_blank" rel="noopener noreferrer" class="hover:underline">${nowPlaying.album.name}</a>`;
+              artists.innerHTML = nowPlaying.artists
+                .map(
+                  (artist) =>
+                    `<a href=${artist.url} target="_blank" rel="noopener noreferrer" class="hover:underline">${artist.name}</a>`,
+                )
+                .join(', ');
+            } else {
+              artwork.innerHTML = '';
+              name.innerHTML = '何も聴いてないよ';
+              album.innerHTML = '';
+              artists.innerHTML = '';
+            }
+          })
+          .then(() => setTimeout(fetchNowPlaying, 30000));
+      fetchNowPlaying();
+    }
+  }
+
+  customElements.define('now-playing', NowPlaying);
+</script>
