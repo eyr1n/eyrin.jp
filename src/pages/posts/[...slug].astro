@@ -5,6 +5,8 @@ import { SITE_TITLE } from '../../consts';
 import Body from '../../components/Body.astro';
 import Head from '../../components/Head.astro';
 
+import 'katex/dist/katex.min.css';
+
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
   return posts.map((post) => ({
@@ -38,3 +40,9 @@ const { title, pubDate, description } = post.data;
     </article>
   </Body>
 </html>
+
+<style is:global>
+  .katex-display {
+    overflow-y: auto;
+  }
+</style>
