@@ -2,8 +2,7 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import Date from '../../components/Date.astro';
 import { SITE_TITLE } from '../../consts';
-import Body from '../../components/Body.astro';
-import Head from '../../components/Head.astro';
+import Base from '../../layouts/Base.astro';
 
 import 'katex/dist/katex.min.css';
 
@@ -21,25 +20,19 @@ const { Content } = await post.render();
 const { title, pubDate, description } = post.data;
 ---
 
-<!doctype html>
-<html lang="ja">
-  <head>
-    <Head title={`${title} | ${SITE_TITLE}`} description={description ?? ''} />
-  </head>
-  <Body>
-    <article>
-      <header
-        class="flex flex-col items-center gap-4 border-b-4 border-dashed border-primary-200 py-12"
-      >
-        <h1 class="text-center text-3xl font-semibold md:text-4xl">{title}</h1>
-        <Date date={pubDate} />
-      </header>
-      <section class="prose prose-slate max-w-none py-12 prose-a:text-sky-600">
-        <Content />
-      </section>
-    </article>
-  </Body>
-</html>
+<Base title={`${title} | ${SITE_TITLE}`} description={description ?? ''}>
+  <article>
+    <header
+      class="flex flex-col items-center gap-4 border-b-4 border-dashed border-primary-200 py-12"
+    >
+      <h1 class="text-center text-3xl font-semibold md:text-4xl">{title}</h1>
+      <Date date={pubDate} />
+    </header>
+    <section class="prose prose-slate max-w-none py-12 prose-a:text-sky-600">
+      <Content />
+    </section>
+  </article>
+</Base>
 
 <style is:global>
   .katex-display {

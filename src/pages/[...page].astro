@@ -4,8 +4,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import Date from '../components/Date.astro';
 import type { Page, PaginateFunction } from 'astro';
 import Button from '../components/Button.astro';
-import Head from '../components/Head.astro';
-import Body from '../components/Body.astro';
+import Base from '../layouts/Base.astro';
 
 export interface Props {
   page: Page<CollectionEntry<'posts'>>;
@@ -25,42 +24,38 @@ export async function getStaticPaths({
 const { page } = Astro.props;
 ---
 
-<!doctype html>
-<html lang="ja">
-  <head><Head title={SITE_TITLE} description={SITE_DESCRIPTION} /></head>
-  <Body>
-    <section class="flex flex-col gap-8 py-12">
-      {
-        page.data.map((post) => (
-          <article class="flex flex-col gap-2">
-            <Date date={post.data.pubDate} />
-            <h2 class="text-2xl font-semibold md:text-3xl">
-              <a href={`/posts/${post.slug}`} class="hover:underline">
-                {post.data.title}
-              </a>
-            </h2>
-          </article>
-        ))
-      }
-    </section>
-    <nav class="flex items-center justify-between pb-8">
-      <Button
-        href={page.url.prev}
-        disabled={!page.url.prev}
-        class="px-4 py-3 font-mono font-medium text-primary-600"
-      >
-        &lt; Prev
-      </Button>
-      <div class="font-mono font-medium">
-        {page.currentPage} / {page.lastPage}
-      </div>
-      <Button
-        href={page.url.next}
-        disabled={!page.url.next}
-        class="block px-4 py-3 font-mono font-medium text-primary-600"
-      >
-        Next &gt;
-      </Button>
-    </nav>
-  </Body>
-</html>
+<Base title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <section class="flex flex-col gap-8 py-12">
+    {
+      page.data.map((post) => (
+        <article class="flex flex-col gap-2">
+          <Date date={post.data.pubDate} />
+          <h2 class="text-2xl font-semibold md:text-3xl">
+            <a href={`/posts/${post.slug}`} class="hover:underline">
+              {post.data.title}
+            </a>
+          </h2>
+        </article>
+      ))
+    }
+  </section>
+  <nav class="flex items-center justify-between pb-8">
+    <Button
+      href={page.url.prev}
+      disabled={!page.url.prev}
+      class="px-4 py-3 font-mono font-medium text-primary-600"
+    >
+      &lt; Prev
+    </Button>
+    <div class="font-mono font-medium">
+      {page.currentPage} / {page.lastPage}
+    </div>
+    <Button
+      href={page.url.next}
+      disabled={!page.url.next}
+      class="block px-4 py-3 font-mono font-medium text-primary-600"
+    >
+      Next &gt;
+    </Button>
+  </nav>
+</Base>
