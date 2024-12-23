@@ -49,7 +49,10 @@ const { title, description } = Astro.props;
       class="-mx-4 mb-1 flex items-center justify-between rounded-b-3xl bg-primary-100 p-6 shadow-[0_4px] shadow-primary-200"
     >
       <h2>
-        <a href="/" class="font-['SiteTitleFont'] text-3xl text-primary-600">
+        <a
+          href="/"
+          class="font-['UbuntuMonoSubset'] text-3xl font-semibold text-primary-600"
+        >
           {SITE_TITLE}
         </a>
       </h2>
@@ -83,14 +86,14 @@ const { title, description } = Astro.props;
     <footer
       class="border-t-4 border-dashed border-primary-200 py-8 text-slate-400"
     >
-      &copy; <span class="font-mono">2024 {SITE_TITLE}</span>
+      &copy; <span class="font-['UbuntuMonoSubset']">2024 {SITE_TITLE}</span>
     </footer>
   </body>
 </html>
 
 <style>
   @font-face {
-    font-family: 'SiteTitleFont';
+    font-family: 'UbuntuMonoSubset';
     font-display: swap;
     src: url(@fontsource-variable/ubuntu-sans-mono/files/ubuntu-sans-mono-latin-wght-normal.woff2)
       format('woff2-variations');

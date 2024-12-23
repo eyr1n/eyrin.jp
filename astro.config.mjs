@@ -26,10 +26,10 @@ export default defineConfig({
           if (font) {
             const subset = await subsetFont(
               Buffer.from(font.source),
-              SITE_TITLE,
+              ` <>/-0123456789PrevNext${SITE_TITLE}`,
               {
                 targetFormat: 'woff2',
-                variationAxes: { wght: 600 },
+                variationAxes: { wght: { min: 400, max: 600 } },
               },
             );
             font.source = new Uint8Array(subset);
