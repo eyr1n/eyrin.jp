@@ -1,4 +1,3 @@
-import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
@@ -10,7 +9,8 @@ import rehypeKatex from 'rehype-katex';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://eyrin.jp',
-  integrations: [mdx(), sitemap(), tailwind(), react()],
+  build: { format: 'file' },
+  integrations: [sitemap(), tailwind(), react()],
   markdown: {
     remarkPlugins: [[behead, { minDepth: 2 }], remarkMath],
     rehypePlugins: [rehypeKatex],
