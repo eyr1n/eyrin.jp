@@ -9,26 +9,30 @@ import { IconDisc, IconUser } from '@tabler/icons-react';
     <div class="h-[84px] w-[84px]" data-nowplaying-artwork></div>
 
     <div
-      class="grid h-[84px] grid-cols-[auto_auto] grid-rows-3 items-center justify-start gap-x-1 border-l-2 border-slate-200 p-1.5"
+      class="grid h-[84px] grid-rows-3 items-center border-l-2 border-slate-200 p-1.5"
     >
       <div
-        class="col-span-2 overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold"
+        class="overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold"
         data-nowplaying-name
       >
       </div>
 
-      <IconDisc size={16} />
-      <div
-        class="overflow-hidden text-ellipsis whitespace-nowrap text-xs"
-        data-nowplaying-album
-      >
+      <div class="grid grid-cols-[auto_auto] justify-start gap-x-1">
+        <IconDisc size={16} />
+        <div
+          class="overflow-hidden text-ellipsis whitespace-nowrap text-xs"
+          data-nowplaying-album
+        >
+        </div>
       </div>
 
-      <IconUser size={16} />
-      <div
-        class="overflow-hidden text-ellipsis whitespace-nowrap text-xs"
-        data-nowplaying-artists
-      >
+      <div class="grid grid-cols-[auto_auto] justify-start gap-x-1">
+        <IconUser size={16} />
+        <div
+          class="overflow-hidden text-ellipsis whitespace-nowrap text-xs"
+          data-nowplaying-artists
+        >
+        </div>
       </div>
     </div>
   </div>
