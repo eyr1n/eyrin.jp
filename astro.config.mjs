@@ -29,7 +29,6 @@ export default defineConfig({
               ` <>/-0123456789PrevNext${SITE_TITLE}`,
               {
                 targetFormat: 'woff2',
-                variationAxes: { wght: { min: 400, max: 600 } },
               },
             );
             font.source = new Uint8Array(subset);

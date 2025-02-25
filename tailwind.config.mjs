@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
 import typography from '@tailwindcss/typography';
-import defaultTheme from 'tailwindcss/defaultTheme';
 import colors from 'tailwindcss/colors';
 
 export default {
@@ -14,9 +13,6 @@ export default {
         github: '#484F58',
         apple: '#007aff',
         android: '#3ddc84',
-      },
-      fontFamily: {
-        mono: ['"Ubuntu Sans Mono Variable"', ...defaultTheme.fontFamily.mono],
       },
       typography: {
         DEFAULT: {
