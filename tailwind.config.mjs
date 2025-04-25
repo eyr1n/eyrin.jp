@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: colors.violet,
+        primary: colors.red,
         twitter: '#1da1f2',
         github: '#484F58',
         apple: '#007aff',
