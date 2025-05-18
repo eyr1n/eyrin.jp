@@ -36,9 +36,19 @@ LinuxおよびWindowsで動作確認しています。macOSについては未検
 
 ![alt text](st_ext_new.png)
 
-# 1. 事前準備 (Linux環境の場合)
+# 1. 事前準備 (for Windows)
 
-## 1.1 STLink用のudevルールの追加
+## Windowsの場合
+
+**2025/05/19更新**
+
+下記URLからSTLink Driverをダウンロードしインストールします。
+
+https://www.st.com/ja/development-tools/stsw-link009.html
+
+## Linuxの場合
+
+### 1.1 STLink用のudevルールの追加
 
 ~~STLinkにroot権限なしでアクセスするためには、udevルールの追加が必要です。~~
 
@@ -52,17 +62,17 @@ LinuxおよびWindowsで動作確認しています。macOSについては未検
 
 https://www.st.com/en/development-tools/stsw-link007.html
 
-## 1.2 libncurses5のインストール
+### 1.2 libncurses5のインストール
 
 新拡張機能に含まれる `arm-none-eabi-gdb` は、libncurses5に依存しています。本記事ではUbuntu 22.04, 24.04におけるlibncurses5の導入方法について解説します。そのほかのディストリビューションについては、がんばってください。
 
-### Ubuntu 22.04の場合
+#### Ubuntu 22.04の場合
 
 ```bash
 sudo apt install libncurses5
 ```
 
-### Ubuntu 24.04の場合
+#### Ubuntu 24.04の場合
 
 libncurses5は公式リポジトリから削除されているため、Ubuntu 22.04向けのパッケージを手動でダウンロードし、以下のコマンドでインストールします。
 
@@ -81,9 +91,7 @@ STM32CubeMXは、STM32 HAL(or LL) Driverに基づくコード生成ツールで�
 
 https://www.st.com/ja/development-tools/stm32cubemx.html
 
-# 3. VSCode拡張機能のインストール
-
-## 3.1 STM32関連拡張機能
+## 2.2 STM32関連拡張機能
 
 以下の2つの拡張機能をインストールしてください。
 
@@ -96,15 +104,15 @@ https://www.st.com/ja/development-tools/stm32cubemx.html
 
 ![alt text](st_new_exts.png)
 
-## 3.2 C/C++拡張機能
+## 2.3 C/C++拡張機能
 
 (入っていない人はおそらくいないと思いますが)Microsoftが提供する「C/C++」拡張機能もインストールしておくことをおすすめします。これによりコード補完などの機能が有効になります。
 
 ![alt text](c_cpp.png)
 
-# 4. プロジェクトの生成と初期設定
+# 3. プロジェクトの生成と初期設定
 
-## 4.1 STM32CubeMXでのプロジェクト生成
+## 3.1 STM32CubeMXでのプロジェクト生成
 
 1. CubeMXを起動し、使用するMCUまたはBoardを選択します
 2. 必要な設定を行い、「Project Manager」->「Project」->「Project Settings」->「Toolchain / IDE」を「CMake」に設定します
@@ -112,7 +120,7 @@ https://www.st.com/ja/development-tools/stm32cubemx.html
 
 ![alt text](cubemx.png)
 
-## 4.2 VSCodeでプロジェクトを開く
+## 3.2 VSCodeでプロジェクトを開く
 
 VSCodeで生成されたプロジェクトフォルダを開くと、画面右下に画像のようなダイアログが表示されますので、「Yes」を選択してください。
 
@@ -123,13 +131,13 @@ VSCodeで生成されたプロジェクトフォルダを開くと、画面右�
 ![alt text](setup_project_1.png)  
 ![alt text](setup_project_2.png)
 
-## 4.3 初回ビルドの実行
+## 3.3 初回ビルドの実行
 
 VSCode左下の「ビルド」ボタンを押して、CMakeによる初回ビルドを実行します。これにより実行ファイルが生成されます。
 
 ![alt text](cmake_build.png)
 
-# 5. デバッグ設定の追加
+## 3.4 デバッグ設定の追加
 
 `.vscode/launch.json` にデバッグ構成を記述します。
 
@@ -148,7 +156,7 @@ VSCode左下の「ビルド」ボタンを押して、CMakeによる初回ビル
 
 この設定により、常に最新のビルド結果でデバッグを開始できるようになります。
 
-# 6. 動作確認
+# 4. 動作確認
 
 `F5` キーを押してデバッグを実行し、STLink経由でターゲットデバイスに書き込み・接続できることを確認してください。デバッガが正常に起動し、ブレークポイントで停止すれば正常に動作していると思われます。
 
