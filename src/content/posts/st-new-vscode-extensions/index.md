@@ -40,11 +40,17 @@ LinuxおよびWindowsで動作確認しています。macOSについては未検
 
 ## 1.1 STLink用のudevルールの追加
 
-STLinkにroot権限なしでアクセスするためには、udevルールの追加が必要です。
+~~STLinkにroot権限なしでアクセスするためには、udevルールの追加が必要です。~~
 
-以下のリポジトリをcloneし、`*.udev` ファイルを `/etc/udev/rules.d/` ディレクトリに全てコピーしてください。
+~~以下のリポジトリをcloneし、`*.udev` ファイルを `/etc/udev/rules.d/` ディレクトリに全てコピーしてください。~~
 
-https://github.com/eyr1n/stlink-udev-rules
+~~https://github.com/eyr1n/stlink-udev-rules~~
+
+**2025/05/19更新**
+
+以下のURLよりSTLink Upgraderをダウンロードし、`stsw-link007/AllPlatforms/StlinkRulesFilesForLinux/` 以下にある `readme.txt` に従ってudevルールをインストールしてください。
+
+https://www.st.com/en/development-tools/stsw-link007.html
 
 ## 1.2 libncurses5のインストール
 
