@@ -38,7 +38,7 @@ LinuxおよびWindowsで動作確認しています。macOSについては未検
 
 # 1. 事前準備 (for Windows)
 
-## Windowsの場合
+## 1.1 Windowsの場合
 
 **2025/05/19更新**
 
@@ -46,9 +46,9 @@ LinuxおよびWindowsで動作確認しています。macOSについては未検
 
 https://www.st.com/ja/development-tools/stsw-link009.html
 
-## Linuxの場合
+## 1.2 Linuxの場合
 
-### 1.1 STLink用のudevルールの追加
+### 1.2.1 STLink用のudevルールの追加
 
 ~~STLinkにroot権限なしでアクセスするためには、udevルールの追加が必要です。~~
 
@@ -62,7 +62,7 @@ https://www.st.com/ja/development-tools/stsw-link009.html
 
 https://www.st.com/en/development-tools/stsw-link007.html
 
-### 1.2 libncurses5のインストール
+### 1.2.2 libncurses5のインストール
 
 新拡張機能に含まれる `arm-none-eabi-gdb` は、libncurses5に依存しています。本記事ではUbuntu 22.04, 24.04におけるlibncurses5の導入方法について解説します。そのほかのディストリビューションについては、がんばってください。
 
