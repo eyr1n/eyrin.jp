@@ -48,7 +48,7 @@ LinuxおよびWindowsで動作確認しています。macOSについては未検
 
 **2025/05/19更新**
 
-以下のURLよりSTLink Upgraderをダウンロードし、`stsw-link007/AllPlatforms/StlinkRulesFilesForLinux/` 以下にある `readme.txt` に従ってudevルールをインストールしてください。
+以下のURLよりSTLink Upgradeをダウンロードし、`stsw-link007/AllPlatforms/StlinkRulesFilesForLinux/` 以下にある `readme.txt` に従ってudevルールをインストールしてください。
 
 https://www.st.com/en/development-tools/stsw-link007.html
 
