@@ -36,7 +36,7 @@ LinuxおよびWindowsで動作確認しています。macOSについては未検
 
 ![alt text](st_ext_new.png)
 
-# 1. 事前準備 (for Windows)
+# 1. 事前準備
 
 ## 1.1 Windowsの場合
 
