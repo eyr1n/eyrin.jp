@@ -4,8 +4,10 @@ import {
   IconBrandTwitter,
   IconUser,
 } from '@tabler/icons-react';
-import { SITE_TITLE } from '../consts';
 import Button from '../components/Button.astro';
+import { SITE_TITLE } from '../consts';
+
+import '../styles/global.css';
 
 interface Props {
   title: string;
@@ -42,24 +44,24 @@ const { title, description } = Astro.props;
     <slot name="head" />
   </head>
 
-  <body class="mx-auto max-w-screen-md break-words px-4 text-slate-800">
+  <body class="mx-auto max-w-screen-md px-4 break-words text-slate-800">
     <header
-      class="-mx-4 mb-1 flex items-center justify-between rounded-b-3xl bg-primary-100 p-6 shadow-[0_4px] shadow-primary-200"
+      class="bg-primary-100 shadow-primary-200 -mx-4 mb-1 flex items-center justify-between rounded-b-3xl p-6 shadow-[0_4px]"
     >
       <h2>
         <a
           href="/"
-          class="font-['UbuntuMonoSubset'] text-3xl font-semibold text-primary-600"
+          class="text-primary-600 font-['UbuntuMonoSubset'] text-3xl font-semibold"
         >
           {SITE_TITLE}
         </a>
       </h2>
       <nav class="flex gap-2">
-        <Button class="p-1.5 text-primary-500" href="/about" aria-label="About">
+        <Button class="text-primary-500 p-1.5" href="/about" aria-label="About">
           <IconUser />
         </Button>
         <Button
-          class="p-1.5 text-twitter"
+          class="text-twitter p-1.5"
           href="https://x.com/eyr1n"
           target="_blank"
           aria-label="Twitter"
@@ -67,7 +69,7 @@ const { title, description } = Astro.props;
           <IconBrandTwitter />
         </Button>
         <Button
-          class="p-1.5 text-github"
+          class="text-github p-1.5"
           href="https://github.com/eyr1n"
           target="_blank"
           aria-label="GitHub"
@@ -82,7 +84,7 @@ const { title, description } = Astro.props;
     </main>
 
     <footer
-      class="border-t-4 border-dashed border-primary-200 py-8 text-slate-400"
+      class="border-primary-200 border-t-4 border-dashed py-8 text-slate-400"
     >
       &copy; <span class="font-['UbuntuMonoSubset']">2024 {SITE_TITLE}</span>
     </footer>

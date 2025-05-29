@@ -26,7 +26,7 @@ import Base from '../layouts/Base.astro';
   <link rel="preconnect" href="https://nowplaying.eyrin.jp" slot="head" />
   <link rel="preconnect" href="https://i.scdn.co" slot="head" />
 
-  <div class="grid gap-4 pb-8 pt-12 md:grid-cols-2">
+  <div class="grid gap-4 pt-12 pb-8 md:grid-cols-2">
     <Card title="プロフィール">
       <div class="flex flex-col gap-4">
         <div>
@@ -56,11 +56,11 @@ import Base from '../layouts/Base.astro';
 
     <Card title="経歴">
       <div class="flex items-stretch">
-        <div class="w-1 rounded bg-primary-600"></div>
+        <div class="bg-primary-600 w-1 rounded"></div>
         <div class="relative flex flex-col gap-4 pl-[calc(2rem+2px)]">
           <div class="relative">
             <div
-              class="absolute -left-12 box-content h-4 w-4 rounded-full border-4 border-primary-600 bg-white"
+              class="border-primary-600 absolute -left-12 box-content h-4 w-4 rounded-full border-4 bg-white"
             >
             </div>
             <div class="mb-1 font-medium">横浜市に生まれる</div>
@@ -68,7 +68,7 @@ import Base from '../layouts/Base.astro';
           </div>
           <div class="relative">
             <div
-              class="absolute -left-12 box-content h-4 w-4 rounded-full border-4 border-primary-600 bg-white"
+              class="border-primary-600 absolute -left-12 box-content h-4 w-4 rounded-full border-4 bg-white"
             >
             </div>
             <div class="mb-1 font-medium">市立小学校</div>
@@ -76,7 +76,7 @@ import Base from '../layouts/Base.astro';
           </div>
           <div class="relative">
             <div
-              class="absolute -left-12 box-content h-4 w-4 rounded-full border-4 border-primary-600 bg-white"
+              class="border-primary-600 absolute -left-12 box-content h-4 w-4 rounded-full border-4 bg-white"
             >
             </div>
             <div class="mb-1 font-medium">市立中学校</div>
@@ -84,7 +84,7 @@ import Base from '../layouts/Base.astro';
           </div>
           <div class="relative">
             <div
-              class="absolute -left-12 box-content h-4 w-4 rounded-full border-4 border-primary-600 bg-white"
+              class="border-primary-600 absolute -left-12 box-content h-4 w-4 rounded-full border-4 bg-white"
             >
             </div>
             <div class="mb-1 font-medium">市立高校</div>
@@ -92,7 +92,7 @@ import Base from '../layouts/Base.astro';
           </div>
           <div class="relative">
             <div
-              class="absolute -left-12 box-content h-4 w-4 rounded-full border-4 border-primary-600 bg-white"
+              class="border-primary-600 absolute -left-12 box-content h-4 w-4 rounded-full border-4 bg-white"
             >
             </div>
             <div class="mb-1 font-medium">豊橋技術科学大学</div>
@@ -100,7 +100,7 @@ import Base from '../layouts/Base.astro';
           </div>
           <div class="relative">
             <div
-              class="absolute -left-12 box-content h-4 w-4 rounded-full border-4 border-primary-600 bg-white"
+              class="border-primary-600 absolute -left-12 box-content h-4 w-4 rounded-full border-4 bg-white"
             >
             </div>
             <div class="mb-1 font-medium">豊橋技術科学大学大学院</div>
@@ -211,7 +211,7 @@ import Base from '../layouts/Base.astro';
     </Card>
   </div>
 
-  <div class="border-t-4 border-dashed border-primary-200 pb-12 pt-8">
+  <div class="border-primary-200 border-t-4 border-dashed pt-8 pb-12">
     <h2 class="mb-6 text-center text-2xl font-semibold">制作物</h2>
     <div class="grid gap-4 md:grid-cols-2">
       <WorkCard
@@ -226,7 +226,7 @@ import Base from '../layouts/Base.astro';
         >)
         <div class="mt-4 flex gap-2">
           <Button
-            class="p-1.5 text-github"
+            class="text-github p-1.5"
             href="https://github.com/eyr1n/stm32h7-iolink-master"
             target="_blank"
             aria-label="GitHub"
@@ -246,7 +246,7 @@ import Base from '../layouts/Base.astro';
         豊橋技術科学大学の学生向け時間割アプリ
         <div class="mt-4 flex gap-2">
           <Button
-            class="p-1.5 text-apple"
+            class="text-apple p-1.5"
             href="https://apps.apple.com/jp/app/tutility/id1624514242"
             target="_blank"
             aria-label="App Store"
@@ -254,7 +254,7 @@ import Base from '../layouts/Base.astro';
             <IconBrandApple />
           </Button>
           <Button
-            class="p-1.5 text-android"
+            class="text-android p-1.5"
             href="https://play.google.com/store/apps/details?id=me.rinrin.tutility"
             target="_blank"
             aria-label="Google Play"
@@ -262,7 +262,7 @@ import Base from '../layouts/Base.astro';
             <IconBrandAndroid />
           </Button>
           <Button
-            class="p-1.5 text-github"
+            class="text-github p-1.5"
             href="https://github.com/eyr1n/TUTility"
             target="_blank"
             aria-label="GitHub"
@@ -275,7 +275,7 @@ import Base from '../layouts/Base.astro';
         CDのジャケット画像をiTunes Storeから探すツール
         <div class="mt-4 flex gap-2">
           <Button
-            class="p-1.5 text-primary-500"
+            class="text-primary-500 p-1.5"
             href="https://artwork.eyrin.jp"
             target="_blank"
             aria-label="Website"
@@ -283,7 +283,7 @@ import Base from '../layouts/Base.astro';
             <IconWorld />
           </Button>
           <Button
-            class="p-1.5 text-github"
+            class="text-github p-1.5"
             href="https://github.com/eyr1n/artwork-search"
             target="_blank"
             aria-label="GitHub"
@@ -296,7 +296,7 @@ import Base from '../layouts/Base.astro';
         ガラケー(Adobe Flash)にパズルゲーム「2048」を移植
         <div class="mt-4 flex gap-2">
           <Button
-            class="p-1.5 text-github"
+            class="text-github p-1.5"
             href="https://github.com/eyr1n/keitai2048"
             target="_blank"
             aria-label="GitHub"

@@ -22,8 +22,8 @@
     "@astrojs/react": "^4.3.0",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.4.0",
-    "@astrojs/tailwind": "^6.0.2",
     "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.1.8",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "@types/subset-font": "^2.3.0",
@@ -35,7 +35,7 @@
     "remark-behead": "^3.1.0",
     "remark-math": "^6.0.0",
     "subset-font": "^2.4.0",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.1.8",
     "typescript": "^5.8.3"
   }
 }
