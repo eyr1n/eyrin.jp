@@ -1,17 +1,17 @@
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
-import { defineConfig } from 'astro/config';
+import type { AstroUserConfig } from 'astro';
 import rehypeKatex from 'rehype-katex';
 import behead from 'remark-behead';
 import remarkMath from 'remark-math';
 import subsetFont from 'subset-font';
 import { SITE_TITLE } from './src/consts';
 
-export default defineConfig({
+export default {
   site: 'https://eyrin.jp',
-  integrations: [sitemap(), react()],
   build: { format: 'file' },
+  integrations: [sitemap(), react()],
   vite: {
     plugins: [
       tailwindcss(),
@@ -43,4 +43,4 @@ export default defineConfig({
     remarkPlugins: [[behead, { minDepth: 2 }], remarkMath],
     rehypePlugins: [rehypeKatex],
   },
-});
+} satisfies AstroUserConfig;
