@@ -7,7 +7,7 @@ pubDate: '2025-05-18 22:26'
 
 本記事では、STMicroelectronicsが提供するVSCode向け拡張機能「STM32Cube for Visual Studio Code Core」とそれに依存する拡張機能群を用いて、CubeIDEを使用しないSTM32開発環境を構築する手順を掲載しています。
 
-LinuxおよびWindowsで動作確認しています。macOSについては未検証です。  
+LinuxおよびWindowsで動作確認しています。macOSについては未検証です。
 
 内容は2025年5月18日時点の情報に基づいています。
 
@@ -76,7 +76,7 @@ sudo apt install libncurses5
 
 libncurses5は公式リポジトリから削除されているため、Ubuntu 22.04向けのパッケージを手動でダウンロードし、以下のコマンドでインストールします。
 
-- https://packages.ubuntu.com/jammy/libtinfo5  
+- https://packages.ubuntu.com/jammy/libtinfo5
 - https://packages.ubuntu.com/jammy/libncurses5
 
 ```bash
