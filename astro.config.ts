@@ -16,7 +16,7 @@ export default {
     plugins: [
       tailwindcss(),
       {
-        name: 'site-title-font',
+        name: 'bundle-font',
         async generateBundle(_, bundle) {
           const font = Object.values(bundle)
             .filter((output) => output.type === 'asset')

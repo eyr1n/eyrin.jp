@@ -1,9 +1,15 @@
 import rss from '@astrojs/rss';
+import type { APIContext } from 'astro';
 import { getCollection } from 'astro:content';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
-export async function GET(context) {
+export async function GET(context: APIContext) {
+  if (context.site == null) {
+    throw new Error('context.site is not defined');
+  }
+
   const posts = await getCollection('posts');
+
   return rss({
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
