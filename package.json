@@ -13,17 +13,18 @@
   "dependencies": {
     "@fontsource-variable/ubuntu-sans-mono": "^5.2.7",
     "@tabler/icons-react": "^3.33.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.1.8",
     "katex": "^0.16.22",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.8"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/react": "^4.3.0",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.4.0",
-    "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.1.8",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "@types/subset-font": "^2.3.0",
@@ -35,7 +36,6 @@
     "remark-behead": "^3.1.0",
     "remark-math": "^6.0.0",
     "subset-font": "^2.4.0",
-    "tailwindcss": "^4.1.8",
     "typescript": "^5.8.3"
   }
 }
