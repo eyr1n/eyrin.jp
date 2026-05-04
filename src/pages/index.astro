@@ -1,0 +1,94 @@
+---
+import { Image } from 'astro:assets';
+import { NowPlaying } from '../components/NowPlaying.tsx';
+import gyozaOmelet from '../assets/IMG_2669.png';
+
+import '../styles/global.css';
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const links = [
+  {
+    label: 'Twitter',
+    text: '@eyr1n',
+    url: 'https://x.com/eyr1n',
+  },
+  {
+    label: 'Twitter',
+    text: '@eyr2n',
+    url: 'https://x.com/eyr2n',
+  },
+  {
+    label: 'Last.fm',
+    text: '@eyr1n',
+    url: 'https://www.last.fm/user/eyr1n',
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>eyrin.jp</title>
+    <meta name="title" content="eyrin.jp" />
+    <meta name="description" content="eyrin.jp" />
+    <link rel="canonical" href={canonicalURL} />
+  </head>
+
+  <body class="bg-[#111111]">
+    <main class="prose prose-invert mx-auto max-w-(--breakpoint-md) px-4 py-8">
+      <section class="chromatic-border p-2">
+        <h1>
+          <span class="chromatic-text" data-text="eyrin.jp">eyrin.jp</span>
+          <span class="align-text-top text-2xl">/ りｎ</span>
+        </h1>
+        <p>あああ</p>
+      </section>
+
+      <section>
+        <h2>
+          <span class="chromatic-text" data-text="About me">About me</span>
+        </h2>
+        <p>
+          「りｎ」とか「eyr1n」とか「eyr2n」って名前でインターネットをやってます。
+        </p>
+        <p>パソコンの使い方を教わる学校に行ってます。</p>
+        <p>特技は「喧噪の中での爆眠」「餃子オムレツ」</p>
+
+        <figure>
+          <Image src={gyozaOmelet} alt="餃子オムレツ" class="w-80" />
+          <figcaption>餃子オムレツ</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>
+          <span class="chromatic-text" data-text="Links">Links</span>
+        </h2>
+        <ul>
+          {
+            links.map((link) => (
+              <li>
+                {link.label}:{' '}
+                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                  {link.text}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section>
+        <h2>
+          <span class="chromatic-text" data-text="Now Playing..."
+            >Now Playing...
+          </span>
+        </h2>
+        <NowPlaying client:load />
+      </section>
+    </main>
+  </body>
+</html>
