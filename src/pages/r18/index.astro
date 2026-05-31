@@ -1,0 +1,36 @@
+---
+import '../../styles/global.css';
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>年齢確認</title>
+    <meta name="title" content="年齢確認" />
+    <meta name="description" content="年齢確認" />
+    <link rel="canonical" href={canonicalURL} />
+  </head>
+
+  <body class="bg-[#111111]">
+    <main class="flex min-h-screen items-center justify-center px-4 py-8">
+      <div class="prose prose-invert text-center">
+        <section>
+          <h1>
+            <span class="chromatic-text" data-text="Confirm">Confirm</span>
+          </h1>
+          <p>あなたは18歳以上ですか？</p>
+          <p>
+            <a href="/r18/thankyou">はい</a>
+          </p>
+          <p>
+            <a href="/r18/thankyou">いいえ</a>
+          </p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
