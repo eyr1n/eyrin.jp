@@ -19,7 +19,7 @@
     "@fontsource/anton": "^5.2.7",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.4",
-    "astro": "^6.2.1",
+    "astro": "^6.4.2",
     "sharp": "^0.34.5",
     "solid-js": "^1.9.12",
     "tailwindcss": "^4.2.4",
