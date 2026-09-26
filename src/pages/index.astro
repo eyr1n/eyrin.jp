@@ -1,5 +1,5 @@
 ---
-import { NowPlaying } from '../components/NowPlaying.tsx';
+import { LastPlayed } from '../components/LastPlayed.tsx';
 
 import '../styles/global.css';
 
@@ -147,11 +147,11 @@ const links = [
 
       <section>
         <h2>
-          <span class="chromatic-text" data-text="Now Playing..."
-            >Now Playing...
+          <span class="chromatic-text" data-text="Last Played Track">
+            Last Played Track
           </span>
         </h2>
-        <NowPlaying client:load />
+        <LastPlayed client:load />
       </section>
     </main>
   </body>
